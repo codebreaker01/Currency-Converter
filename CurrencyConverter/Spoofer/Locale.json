@@ -1,0 +1,1022 @@
+{
+    "aa_DJ": {
+        "name": "Afar (Djibouti)",
+        "currency": "DJF"
+    },
+    "aa_ER": {
+        "name": "Afar (Eritrea)",
+        "currency": "ERN"
+    },
+    "aa_ET": {
+        "name": "Afar (Ethiopia)",
+        "currency": "ETB"
+    },
+    "af_ZA": {
+        "name": "Afrikaans (South Africa)",
+        "currency": "ZAR"
+    },
+    "am_ET": {
+        "name": "Amharic (Ethiopia)",
+        "currency": "ETB"
+    },
+    "an_ES": {
+        "name": "Aragonese (Spain)",
+        "currency": "EUR"
+    },
+    "ar_AE": {
+        "name": "Arabic (United Arab Emirates)",
+        "currency": "AED"
+    },
+    "ar_BH": {
+        "name": "Arabic (Bahrain)",
+        "currency": "BHD"
+    },
+    "ar_DZ": {
+        "name": "Arabic (Algeria)",
+        "currency": "DZD"
+    },
+    "ar_EG": {
+        "name": "Arabic (Egypt)",
+        "currency": "EGP"
+    },
+    "ar_IN": {
+        "name": "Arabic (India)",
+        "currency": "INR"
+    },
+    "ar_IQ": {
+        "name": "Arabic (Iraq)",
+        "currency": "IQD"
+    },
+    "ar_JO": {
+        "name": "Arabic (Jordan)",
+        "currency": "JOD"
+    },
+    "ar_KW": {
+        "name": "Arabic (Kuwait)",
+        "currency": "KWD"
+    },
+    "ar_LB": {
+        "name": "Arabic (Lebanon)",
+        "currency": "LBP"
+    },
+    "ar_LY": {
+        "name": "Arabic (Libya)",
+        "currency": "LYD"
+    },
+    "ar_MA": {
+        "name": "Arabic (Morocco)",
+        "currency": "MAD"
+    },
+    "ar_OM": {
+        "name": "Arabic (Oman)",
+        "currency": "OMR"
+    },
+    "ar_QA": {
+        "name": "Arabic (Qatar)",
+        "currency": "QAR"
+    },
+    "ar_SA": {
+        "name": "Arabic (Saudi Arabia)",
+        "currency": "SAR"
+    },
+    "ar_SD": {
+        "name": "Arabic (Sudan)",
+        "currency": "SDD"
+    },
+    "ar_SY": {
+        "name": "Arabic (Syria)",
+        "currency": "SYP"
+    },
+    "ar_TN": {
+        "name": "Arabic (Tunisia)",
+        "currency": "TND"
+    },
+    "ar_YE": {
+        "name": "Arabic (Yemen)",
+        "currency": "YER"
+    },
+    "as_IN": {
+        "name": "Assamese (India)",
+        "currency": "INR"
+    },
+    "ast_ES": {
+        "name": "Asturian (Spain)",
+        "currency": "EUR"
+    },
+    "az_AZ": {
+        "name": "Azerbaijani (Azerbaijan)",
+        "currency": "AZN"
+    },
+    "be_BY": {
+        "name": "Belarusian (Belarus)",
+        "currency": "BYR"
+    },
+    "bem_ZM": {
+        "name": "Bemba (Zambia)",
+        "currency": "ZMK"
+    },
+    "ber_DZ": {
+        "name": "Berber (Algeria)",
+        "currency": "DZD"
+    },
+    "ber_MA": {
+        "name": "Berber (Morocco)",
+        "currency": "MAD"
+    },
+    "bg_BG": {
+        "name": "Bulgarian (Bulgaria)",
+        "currency": "BGN"
+    },
+    "bho_IN": {
+        "name": "Bhojpuri (India)",
+        "currency": "INR"
+    },
+    "bn_BD": {
+        "name": "Bengali (Bangladesh)",
+        "currency": "BDT"
+    },
+    "bn_IN": {
+        "name": "Bengali (India)",
+        "currency": "INR"
+    },
+    "bo_CN": {
+        "name": "Tibetan (China)",
+        "currency": "CNY"
+    },
+    "bo_IN": {
+        "name": "Tibetan (India)",
+        "currency": "INR"
+    },
+    "br_FR": {
+        "name": "Breton (France)",
+        "currency": "EUR"
+    },
+    "brx_IN": {
+        "name": "Bodo (India)",
+        "currency": "INR"
+    },
+    "bs_BA": {
+        "name": "Bosnian (Bosnia and Herzegovina)",
+        "currency": "BAM"
+    },
+    "byn_ER": {
+        "name": "Blin (Eritrea)",
+        "currency": "ERN"
+    },
+    "ca_AD": {
+        "name": "Catalan (Andorra)",
+        "currency": "EUR"
+    },
+    "ca_ES": {
+        "name": "Catalan (Spain)",
+        "currency": "EUR"
+    },
+    "ca_FR": {
+        "name": "Catalan (France)",
+        "currency": "EUR"
+    },
+    "ca_IT": {
+        "name": "Catalan (Italy)",
+        "currency": "EUR"
+    },
+    "crh_UA": {
+        "name": "Crimean Turkish (Ukraine)",
+        "currency": "UAH"
+    },
+    "cs_CZ": {
+        "name": "Czech (Czech Republic)",
+        "currency": "CZK"
+    },
+    "csb_PL": {
+        "name": "Kashubian (Poland)",
+        "currency": "PLN"
+    },
+    "cv_RU": {
+        "name": "Chuvash (Russia)",
+        "currency": "RUB"
+    },
+    "cy_GB": {
+        "name": "Welsh (United Kingdom)",
+        "currency": "GBP"
+    },
+    "da_DK": {
+        "name": "Danish (Denmark)",
+        "currency": "DKK"
+    },
+    "de_AT": {
+        "name": "German (Austria)",
+        "currency": "EUR"
+    },
+    "de_BE": {
+        "name": "German (Belgium)",
+        "currency": "EUR"
+    },
+    "de_CH": {
+        "name": "German (Switzerland)",
+        "currency": "CHF"
+    },
+    "de_DE": {
+        "name": "German (Germany)",
+        "currency": "EUR"
+    },
+    "de_LU": {
+        "name": "German (Luxembourg)",
+        "currency": "EUR"
+    },
+    "dv_MV": {
+        "name": "Divehi (Maldives)",
+        "currency": "MVR"
+    },
+    "dz_BT": {
+        "name": "Dzongkha (Bhutan)",
+        "currency": "BTN"
+    },
+    "el_CY": {
+        "name": "Greek (Cyprus)",
+        "currency": "EUR"
+    },
+    "el_GR": {
+        "name": "Greek (Greece)",
+        "currency": "EUR"
+    },
+    "en_AG": {
+        "name": "English (Antigua and Barbuda)",
+        "currency": "XCD"
+    },
+    "en_AU": {
+        "name": "English (Australia)",
+        "currency": "AUD"
+    },
+    "en_BW": {
+        "name": "English (Botswana)",
+        "currency": "BWP"
+    },
+    "en_CA": {
+        "name": "English (Canada)",
+        "currency": "CAD"
+    },
+    "en_DK": {
+        "name": "English (Denmark)",
+        "currency": "DKK"
+    },
+    "en_GB": {
+        "name": "English (United Kingdom)",
+        "currency": "GBP"
+    },
+    "en_HK": {
+        "name": "English (Hong Kong SAR China)",
+        "currency": "HKD"
+    },
+    "en_IE": {
+        "name": "English (Ireland)",
+        "currency": "EUR"
+    },
+    "en_IN": {
+        "name": "English (India)",
+        "currency": "INR"
+    },
+    "en_NG": {
+        "name": "English (Nigeria)",
+        "currency": "NGN"
+    },
+    "en_NZ": {
+        "name": "English (New Zealand)",
+        "currency": "NZD"
+    },
+    "en_PH": {
+        "name": "English (Philippines)",
+        "currency": "PHP"
+    },
+    "en_SG": {
+        "name": "English (Singapore)",
+        "currency": "SGD"
+    },
+    "en_US": {
+        "name": "English (United States)",
+        "currency": "USD"
+    },
+    "en_ZA": {
+        "name": "English (South Africa)",
+        "currency": "ZAR"
+    },
+    "en_ZM": {
+        "name": "English (Zambia)",
+        "currency": "ZMK"
+    },
+    "en_ZW": {
+        "name": "English (Zimbabwe)",
+        "currency": "ZWD"
+    },
+    "eo": {
+        "name": "Esperanto",
+        "currency": "EUR"
+    },
+    "es_AR": {
+        "name": "Spanish (Argentina)",
+        "currency": "ARS"
+    },
+    "es_BO": {
+        "name": "Spanish (Bolivia)",
+        "currency": "BOB"
+    },
+    "es_CL": {
+        "name": "Spanish (Chile)",
+        "currency": "CLP"
+    },
+    "es_CO": {
+        "name": "Spanish (Colombia)",
+        "currency": "COP"
+    },
+    "es_CR": {
+        "name": "Spanish (Costa Rica)",
+        "currency": "CRC"
+    },
+    "es_CU": {
+        "name": "Spanish (Cuba)",
+        "currency": "CUP"
+    },
+    "es_DO": {
+        "name": "Spanish (Dominican Republic)",
+        "currency": "DOP"
+    },
+    "es_EC": {
+        "name": "Spanish (Ecuador)",
+        "currency": "USD"
+    },
+    "es_ES": {
+        "name": "Spanish (Spain)",
+        "currency": "EUR"
+    },
+    "es_GT": {
+        "name": "Spanish (Guatemala)",
+        "currency": "GTQ"
+    },
+    "es_HN": {
+        "name": "Spanish (Honduras)",
+        "currency": "HNL"
+    },
+    "es_MX": {
+        "name": "Spanish (Mexico)",
+        "currency": "MXN"
+    },
+    "es_NI": {
+        "name": "Spanish (Nicaragua)",
+        "currency": "NIO"
+    },
+    "es_PA": {
+        "name": "Spanish (Panama)",
+        "currency": "PAB"
+    },
+    "es_PE": {
+        "name": "Spanish (Peru)",
+        "currency": "PEN"
+    },
+    "es_PR": {
+        "name": "Spanish (Puerto Rico)",
+        "currency": "USD"
+    },
+    "es_PY": {
+        "name": "Spanish (Paraguay)",
+        "currency": "PYG"
+    },
+    "es_SV": {
+        "name": "Spanish (El Salvador)",
+        "currency": "SVC"
+    },
+    "es_US": {
+        "name": "Spanish (United States)",
+        "currency": "USD"
+    },
+    "es_UY": {
+        "name": "Spanish (Uruguay)",
+        "currency": "UYU"
+    },
+    "es_VE": {
+        "name": "Spanish (Venezuela)",
+        "currency": "VEB"
+    },
+    "et_EE": {
+        "name": "Estonian (Estonia)",
+        "currency": "EUR"
+    },
+    "eu_ES": {
+        "name": "Basque (Spain)",
+        "currency": "EUR"
+    },
+    "eu_FR": {
+        "name": "Basque (France)",
+        "currency": "EUR"
+    },
+    "fa_IR": {
+        "name": "Persian (Iran)",
+        "currency": "IRR"
+    },
+    "ff_SN": {
+        "name": "Fulah (Senegal)",
+        "currency": "XOF"
+    },
+    "fi_FI": {
+        "name": "Finnish (Finland)",
+        "currency": "EUR"
+    },
+    "fil_PH": {
+        "name": "Filipino (Philippines)",
+        "currency": "PHP"
+    },
+    "fo_FO": {
+        "name": "Faroese (Faroe Islands)",
+        "currency": "DKK"
+    },
+    "fr_BE": {
+        "name": "French (Belgium)",
+        "currency": "EUR"
+    },
+    "fr_CA": {
+        "name": "French (Canada)",
+        "currency": "CAD"
+    },
+    "fr_CH": {
+        "name": "French (Switzerland)",
+        "currency": "CHF"
+    },
+    "fr_FR": {
+        "name": "French (France)",
+        "currency": "EUR"
+    },
+    "fr_LU": {
+        "name": "French (Luxembourg)",
+        "currency": "EUR"
+    },
+    "fur_IT": {
+        "name": "Friulian (Italy)",
+        "currency": "EUR"
+    },
+    "fy_DE": {
+        "name": "Western Frisian (Germany)",
+        "currency": "EUR"
+    },
+    "fy_NL": {
+        "name": "Western Frisian (Netherlands)",
+        "currency": "EUR"
+    },
+    "ga_IE": {
+        "name": "Irish (Ireland)",
+        "currency": "EUR"
+    },
+    "gd_GB": {
+        "name": "Scottish Gaelic (United Kingdom)",
+        "currency": "GBP"
+    },
+    "gez_ER": {
+        "name": "Geez (Eritrea)",
+        "currency": "ERN"
+    },
+    "gez_ET": {
+        "name": "Geez (Ethiopia)",
+        "currency": "ETB"
+    },
+    "gl_ES": {
+        "name": "Galician (Spain)",
+        "currency": "EUR"
+    },
+    "gu_IN": {
+        "name": "Gujarati (India)",
+        "currency": "INR"
+    },
+    "gv_GB": {
+        "name": "Manx (United Kingdom)",
+        "currency": "GBP"
+    },
+    "ha_NG": {
+        "name": "Hausa (Nigeria)",
+        "currency": "NGN"
+    },
+    "he_IL": {
+        "name": "Hebrew (Israel)",
+        "currency": "ILS"
+    },
+    "hi_IN": {
+        "name": "Hindi (India)",
+        "currency": "INR"
+    },
+    "hne_IN": {
+        "name": "hne (India)",
+        "currency": "INR"
+    },
+    "hr_HR": {
+        "name": "Croatian (Croatia)",
+        "currency": "HRK"
+    },
+    "hsb_DE": {
+        "name": "Upper Sorbian (Germany)",
+        "currency": "EUR"
+    },
+    "ht_HT": {
+        "name": "Haitian (Haiti)",
+        "currency": "HTG"
+    },
+    "hu_HU": {
+        "name": "Hungarian (Hungary)",
+        "currency": "HUF"
+    },
+    "hy_AM": {
+        "name": "Armenian (Armenia)",
+        "currency": "AMD"
+    },
+    "ia": {
+        "name": "Interlingua",
+        "currency": "EUR"
+    },
+    "id_ID": {
+        "name": "Indonesian (Indonesia)",
+        "currency": "IDR"
+    },
+    "ig_NG": {
+        "name": "Igbo (Nigeria)",
+        "currency": "NGN"
+    },
+    "ik_CA": {
+        "name": "Inupiaq (Canada)",
+        "currency": "CAD"
+    },
+    "is_IS": {
+        "name": "Icelandic (Iceland)",
+        "currency": "ISK"
+    },
+    "it_CH": {
+        "name": "Italian (Switzerland)",
+        "currency": "CHF"
+    },
+    "it_IT": {
+        "name": "Italian (Italy)",
+        "currency": "EUR"
+    },
+    "iu_CA": {
+        "name": "Inuktitut (Canada)",
+        "currency": "CAD"
+    },
+    "iw_IL": {
+        "name": "Hebrew (Israel)",
+        "currency": "ILS"
+    },
+    "ka_GE": {
+        "name": "Georgian (Georgia)",
+        "currency": "GEL"
+    },
+    "kk_KZ": {
+        "name": "Kazakh (Kazakhstan)",
+        "currency": "KZT"
+    },
+    "kl_GL": {
+        "name": "Kalaallisut (Greenland)",
+        "currency": "DKK"
+    },
+    "km_KH": {
+        "name": "Khmer (Cambodia)",
+        "currency": "KHR"
+    },
+    "kn_IN": {
+        "name": "Kannada (India)",
+        "currency": "INR"
+    },
+    "kok_IN": {
+        "name": "Konkani (India)",
+        "currency": "INR"
+    },
+    "ks_IN": {
+        "name": "Kashmiri (India)",
+        "currency": "INR"
+    },
+    "ku_TR": {
+        "name": "Kurdish (Turkey)",
+        "currency": "TRY"
+    },
+    "kw_GB": {
+        "name": "Cornish (United Kingdom)",
+        "currency": "GBP"
+    },
+    "ky_KG": {
+        "name": "Kirghiz (Kyrgyzstan)",
+        "currency": "KGS"
+    },
+    "lb_LU": {
+        "name": "Luxembourgish (Luxembourg)",
+        "currency": "EUR"
+    },
+    "lg_UG": {
+        "name": "Ganda (Uganda)",
+        "currency": "UGX"
+    },
+    "li_BE": {
+        "name": "Limburgish (Belgium)",
+        "currency": "EUR"
+    },
+    "li_NL": {
+        "name": "Limburgish (Netherlands)",
+        "currency": "EUR"
+    },
+    "lij_IT": {
+        "name": "lij (Italy)",
+        "currency": "EUR"
+    },
+    "lo_LA": {
+        "name": "Lao (Laos)",
+        "currency": "LAK"
+    },
+    "lt_LT": {
+        "name": "Lithuanian (Lithuania)",
+        "currency": "LTL"
+    },
+    "lv_LV": {
+        "name": "Latvian (Latvia)",
+        "currency": "LVL"
+    },
+    "mai_IN": {
+        "name": "Maithili (India)",
+        "currency": "INR"
+    },
+    "mg_MG": {
+        "name": "Malagasy (Madagascar)",
+        "currency": "MGA"
+    },
+    "mhr_RU": {
+        "name": "mhr (Russia)",
+        "currency": "RUB"
+    },
+    "mi_NZ": {
+        "name": "Maori (New Zealand)",
+        "currency": "NZD"
+    },
+    "mk_MK": {
+        "name": "Macedonian (Macedonia)",
+        "currency": "MKD"
+    },
+    "ml_IN": {
+        "name": "Malayalam (India)",
+        "currency": "INR"
+    },
+    "mn_MN": {
+        "name": "Mongolian (Mongolia)",
+        "currency": "MNT"
+    },
+    "mr_IN": {
+        "name": "Marathi (India)",
+        "currency": "INR"
+    },
+    "ms_MY": {
+        "name": "Malay (Malaysia)",
+        "currency": "MYR"
+    },
+    "mt_MT": {
+        "name": "Maltese (Malta)",
+        "currency": "EUR"
+    },
+    "my_MM": {
+        "name": "Burmese (Myanmar [Burma])",
+        "currency": "MMK"
+    },
+    "nb_NO": {
+        "name": "Norwegian Bokmål (Norway)",
+        "currency": "NOK"
+    },
+    "nds_DE": {
+        "name": "Low German (Germany)",
+        "currency": "EUR"
+    },
+    "nds_NL": {
+        "name": "Low German (Netherlands)",
+        "currency": "EUR"
+    },
+    "ne_NP": {
+        "name": "Nepali (Nepal)",
+        "currency": "INR"
+    },
+    "nl_AW": {
+        "name": "Dutch (Aruba)",
+        "currency": "AWG"
+    },
+    "nl_BE": {
+        "name": "Dutch (Belgium)",
+        "currency": "EUR"
+    },
+    "nl_NL": {
+        "name": "Dutch (Netherlands)",
+        "currency": "EUR"
+    },
+    "nn_NO": {
+        "name": "Norwegian Nynorsk (Norway)",
+        "currency": "NOK"
+    },
+    "nr_ZA": {
+        "name": "South Ndebele (South Africa)",
+        "currency": "ZAR"
+    },
+    "nso_ZA": {
+        "name": "Northern Sotho (South Africa)",
+        "currency": "ZAR"
+    },
+    "oc_FR": {
+        "name": "Occitan (France)",
+        "currency": "EUR"
+    },
+    "om_ET": {
+        "name": "Oromo (Ethiopia)",
+        "currency": "ETB"
+    },
+    "om_KE": {
+        "name": "Oromo (Kenya)",
+        "currency": "KES"
+    },
+    "or_IN": {
+        "name": "Oriya (India)",
+        "currency": "INR"
+    },
+    "os_RU": {
+        "name": "Ossetic (Russia)",
+        "currency": "RUB"
+    },
+    "pa_IN": {
+        "name": "Punjabi (India)",
+        "currency": "INR"
+    },
+    "pa_PK": {
+        "name": "Punjabi (Pakistan)",
+        "currency": "PKR"
+    },
+    "pap_AN": {
+        "name": "Papiamento (Netherlands Antilles)",
+        "currency": "ANG"
+    },
+    "pl_PL": {
+        "name": "Polish (Poland)",
+        "currency": "PLN"
+    },
+    "ps_AF": {
+        "name": "Pashto (Afghanistan)",
+        "currency": "AFN"
+    },
+    "pt_BR": {
+        "name": "Portuguese (Brazil)",
+        "currency": "BRL"
+    },
+    "pt_PT": {
+        "name": "Portuguese (Portugal)",
+        "currency": "EUR"
+    },
+    "ro_RO": {
+        "name": "Romanian (Romania)",
+        "currency": "RON"
+    },
+    "ru_RU": {
+        "name": "Russian (Russia)",
+        "currency": "RUB"
+    },
+    "ru_UA": {
+        "name": "Russian (Ukraine)",
+        "currency": "UAH"
+    },
+    "rw_RW": {
+        "name": "Kinyarwanda (Rwanda)",
+        "currency": "RWF"
+    },
+    "sa_IN": {
+        "name": "Sanskrit (India)",
+        "currency": "INR"
+    },
+    "sc_IT": {
+        "name": "Sardinian (Italy)",
+        "currency": "EUR"
+    },
+    "sd_IN": {
+        "name": "Sindhi (India)",
+        "currency": "INR"
+    },
+    "sd_PK": {
+        "name": "Sindhi (Pakistan)",
+        "currency": "PKR"
+    },
+    "se_NO": {
+        "name": "Northern Sami (Norway)",
+        "currency": "NOK"
+    },
+    "shs_CA": {
+        "name": "shs (Canada)",
+        "currency": "CAD"
+    },
+    "si_LK": {
+        "name": "Sinhala (Sri Lanka)",
+        "currency": "LKR"
+    },
+    "sid_ET": {
+        "name": "Sidamo (Ethiopia)",
+        "currency": "ETB"
+    },
+    "sk_SK": {
+        "name": "Slovak (Slovakia)",
+        "currency": "EUR"
+    },
+    "sl_SI": {
+        "name": "Slovenian (Slovenia)",
+        "currency": "EUR"
+    },
+    "so_DJ": {
+        "name": "Somali (Djibouti)",
+        "currency": "DJF"
+    },
+    "so_ET": {
+        "name": "Somali (Ethiopia)",
+        "currency": "ETB"
+    },
+    "so_KE": {
+        "name": "Somali (Kenya)",
+        "currency": "ETB"
+    },
+    "so_SO": {
+        "name": "Somali (Somalia)",
+        "currency": "SOS"
+    },
+    "sq_AL": {
+        "name": "Albanian (Albania)",
+        "currency": "ALL"
+    },
+    "sq_MK": {
+        "name": "Albanian (Macedonia)",
+        "currency": "MKD"
+    },
+    "sr_ME": {
+        "name": "Serbian (Montenegro)",
+        "currency": "EUR"
+    },
+    "sr_RS": {
+        "name": "Serbian (Serbia)",
+        "currency": "RSD"
+    },
+    "ss_ZA": {
+        "name": "Swati (South Africa)",
+        "currency": "ZAR"
+    },
+    "st_ZA": {
+        "name": "Southern Sotho (South Africa)",
+        "currency": "ZAR"
+    },
+    "sv_FI": {
+        "name": "Swedish (Finland)",
+        "currency": "EUR"
+    },
+    "sv_SE": {
+        "name": "Swedish (Sweden)",
+        "currency": "SEK"
+    },
+    "sw_KE": {
+        "name": "Swahili (Kenya)",
+        "currency": "KES"
+    },
+    "sw_TZ": {
+        "name": "Swahili (Tanzania)",
+        "currency": "TZS"
+    },
+    "ta_IN": {
+        "name": "Tamil (India)",
+        "currency": "INR"
+    },
+    "ta_LK": {
+        "name": "Tamil (Sri Lanka)",
+        "currency": "INR"
+    },
+    "te_IN": {
+        "name": "Telugu (India)",
+        "currency": "INR"
+    },
+    "tg_TJ": {
+        "name": "Tajik (Tajikistan)",
+        "currency": "TJS"
+    },
+    "th_TH": {
+        "name": "Thai (Thailand)",
+        "currency": "THB"
+    },
+    "ti_ER": {
+        "name": "Tigrinya (Eritrea)",
+        "currency": "ERN"
+    },
+    "ti_ET": {
+        "name": "Tigrinya (Ethiopia)",
+        "currency": "ETB"
+    },
+    "tig_ER": {
+        "name": "Tigre (Eritrea)",
+        "currency": "ERN"
+    },
+    "tk_TM": {
+        "name": "Turkmen (Turkmenistan)",
+        "currency": "TMM"
+    },
+    "tl_PH": {
+        "name": "Tagalog (Philippines)",
+        "currency": "PHP"
+    },
+    "tn_ZA": {
+        "name": "Tswana (South Africa)",
+        "currency": "ZAR"
+    },
+    "tr_CY": {
+        "name": "Turkish (Cyprus)",
+        "currency": "TRY"
+    },
+    "tr_TR": {
+        "name": "Turkish (Turkey)",
+        "currency": "TRY"
+    },
+    "ts_ZA": {
+        "name": "Tsonga (South Africa)",
+        "currency": "ZAR"
+    },
+    "tt_RU": {
+        "name": "Tatar (Russia)",
+        "currency": "RUB"
+    },
+    "ug_CN": {
+        "name": "Uighur (China)",
+        "currency": "CNY"
+    },
+    "uk_UA": {
+        "name": "Ukrainian (Ukraine)",
+        "currency": "UAH"
+    },
+    "unm_US": {
+        "name": "unm (United States)",
+        "currency": "USD"
+    },
+    "ur_IN": {
+        "name": "Urdu (India)",
+        "currency": "INR"
+    },
+    "ur_PK": {
+        "name": "Urdu (Pakistan)",
+        "currency": "PKR"
+    },
+    "uz_UZ": {
+        "name": "Uzbek (Uzbekistan)",
+        "currency": "UZS"
+    },
+    "ve_ZA": {
+        "name": "Venda (South Africa)",
+        "currency": "ZAR"
+    },
+    "vi_VN": {
+        "name": "Vietnamese (Vietnam)",
+        "currency": "VND"
+    },
+    "wa_BE": {
+        "name": "Walloon (Belgium)",
+        "currency": "EUR"
+    },
+    "wae_CH": {
+        "name": "Walser (Switzerland)",
+        "currency": "CHF"
+    },
+    "wal_ET": {
+        "name": "Walamo (Ethiopia)",
+        "currency": "ETB"
+    },
+    "wo_SN": {
+        "name": "Wolof (Senegal)",
+        "currency": "XOF"
+    },
+    "xh_ZA": {
+        "name": "Xhosa (South Africa)",
+        "currency": "ZAR"
+    },
+    "yi_US": {
+        "name": "Yiddish (United States)",
+        "currency": "USD"
+    },
+    "yo_NG": {
+        "name": "Yoruba (Nigeria)",
+        "currency": "NGN"
+    },
+    "yue_HK": {
+        "name": "Cantonese (Hong Kong SAR China)",
+        "currency": "HKD"
+    },
+    "zh_CN": {
+        "name": "Chinese (China)",
+        "currency": "CNY"
+    },
+    "zh_HK": {
+        "name": "Chinese (Hong Kong SAR China)",
+        "currency": "HKD"
+    },
+    "zh_SG": {
+        "name": "Chinese (Singapore)",
+        "currency": "SGD"
+    },
+    "zh_TW": {
+        "name": "Chinese (Taiwan)",
+        "currency": "TWD"
+    },
+    "zu_ZA": {
+        "name": "Zulu (South Africa)",
+        "currency": "ZAR"
+    }
+}
