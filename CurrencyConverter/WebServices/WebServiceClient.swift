@@ -20,7 +20,7 @@ public class WebServiceClient  {
     public func buildCurrencyList() {
         Alamofire.request(.GET, kURLForCurrencyList)
             .responseJSON { (_, _, JSON, _) in
-                
+                println(JSON)
         }
     }
 }
