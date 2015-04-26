@@ -62,4 +62,28 @@ public class WebServiceClient  {
                 }
         }
     }
+    
+    public func getHistoricalRates(from:NSString!, to:NSString!, start:NSDate!, end:NSDate!) {
+        
+        let params = [
+            "from"      : from,
+            "to"        : to,
+            "dateStart" : start,
+            "dateEnd"   : end,
+            "apiKey"    : kJSONRatesAPIKey
+        ]
+        
+        Alamofire.request(.GET, kURLForHistoricalData, parameters: params)
+            .responseJSON { (_, _, results, _) in
+                
+                if let json = results as? Dictionary<String, AnyObject> {
+                    
+                    if let rates = json["rates"] as? Array<String> {
+                        
+                        DataManager.sharedInstance.manageHistoricalData(json["from"] as! String, to:json["to"] as! String, rates: json["rates"] as? Array<AnyObject>)
+                    }
+                }
+        }
+
+    }
 }

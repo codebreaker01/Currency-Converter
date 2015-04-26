@@ -10,12 +10,17 @@ import Foundation
 
 extension DataManager {
     
-    // MARK: - Utilities
+    // MARK: - Public Utilities
     
     public func aggregateCurrencyListDataSources(currencySymbolSource: Dictionary<String, AnyObject>, availableCurrencySource: Dictionary<String, AnyObject>) {
+        
     }
     
     public func manageExchangeRates(base:String!, rates:Array<String>?) {
+        
+    }
+    
+    public func manageHistoricalData(from:String!, to:String!, rates:Array<AnyObject>?) {
         
     }
     
@@ -41,7 +46,9 @@ extension DataManager {
         NSUserDefaults.standardUserDefaults().synchronize()
     }
     
-    public func countryToCurrencyCode(country:String!) -> String? {
+    // MARK: - Internal Utilities
+    
+    internal func countryToCurrencyCode(country:String!) -> String? {
         
         var error: NSError?
         if let path = NSBundle.mainBundle().pathForResource("Locale", ofType: "json") {
