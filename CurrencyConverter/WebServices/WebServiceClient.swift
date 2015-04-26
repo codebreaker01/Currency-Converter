@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class WebServiceClient  {
+    
+    // Singleton Instance
+    static let sharedInstance = WebServiceClient()
+    
+    
+}
