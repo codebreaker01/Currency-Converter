@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import Alamofire
 
-class WebServiceClient  {
+public class WebServiceClient  {
     
-    // Singleton Instance
+    // MARK: - Singleton Instance
+    
     static let sharedInstance = WebServiceClient()
     
+    // MARK: - Web Services
+    
+    public func buildCurrencyList() {
+        Alamofire.request(.GET, kURLForCurrencyList)
+            .responseJSON { (_, _, JSON, _) in
+                
+        }
+    }
 }

@@ -9,9 +9,10 @@
 import Foundation
 import CoreData
 
-class DataManager {
+public class DataManager {
     
     // MARK: - Singleton Instance
+    
     static let sharedInstance = DataManager()
     
     // MARK: - Core Data stack
