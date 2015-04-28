@@ -49,5 +49,4 @@ extension Currency {
         let entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: context)
         return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! Currency
     }
-    
 }

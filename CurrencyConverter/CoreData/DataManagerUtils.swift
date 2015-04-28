@@ -30,9 +30,18 @@ extension DataManager {
         self.saveContext()
     }
     
-    public func manageExchangeRates(base:String, rates:Dictionary<String, String>) {
+    public func manageExchangeRates(base:String, lastUpdated:String, rates:Dictionary<String, String>) {
         
-
+        var baseRate = [ base : "1.0"]
+        baseRate.update(rates)
+        
+        CurrencyRates.deleteAll()
+        var cr = CurrencyRates.insertNewObjectInContext(DataManager.sharedInstance.managedObjectContext!)
+        cr.currencyRates = baseRate
+        if let utcDate = NSDate.toUTCDate(lastUpdated) {
+            cr.lastUpdated = utcDate.toLocalTime()
+        }
+        DataManager.sharedInstance.saveContext()
     }
     
     public func manageHistoricalData(from:String, to:String, rates:Dictionary<String, String>) {

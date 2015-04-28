@@ -48,7 +48,7 @@ public class WebServiceClient  {
                     
                     if let rates = json["rates"] as? Dictionary<String, String> {
                         
-                        DataManager.sharedInstance.manageExchangeRates(json["base"] as! String, rates:rates)
+                        DataManager.sharedInstance.manageExchangeRates(json["base"] as! String, lastUpdated: json["utctime"] as! String, rates:rates)
                         
                     }
                 }
