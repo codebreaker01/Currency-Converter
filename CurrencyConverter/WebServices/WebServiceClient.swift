@@ -19,25 +19,17 @@ public class WebServiceClient  {
     
     public func buildCurrencyList() {
         
-        // Get Currency List with Symbols
-        Alamofire.request(.GET, kURLForCurrencySymbols)
-            .responseJSON { (_, _, symbolCurrencyJSON, _) in
-                
-                if let symbolCurrency = symbolCurrencyJSON as? Dictionary<String, AnyObject> {
+        if let currencySymbolSource = DataManager.sharedInstance.currencySymbolSource() {
+            
+            // Get available Currency List
+            Alamofire.request(.GET, kURLForCurrencies)
+                .responseJSON { (_, _, availableCurrencyJSON, _) in
                     
-                    if let symbolCurrencyResults = symbolCurrency["results"] as? Dictionary<String, AnyObject> {
+                    if let availableCurrency = availableCurrencyJSON as? Dictionary<String, String> {
                         
-                    // Get available Currency List
-                    Alamofire.request(.GET, kURLForCurrencies)
-                        .responseJSON { (_, _, availableCurrencyJSON, _) in
-                            
-                            if let availableCurrency = availableCurrencyJSON as? Dictionary<String, String> {
-                                
-                                DataManager.sharedInstance.aggregateCurrencyListDataSources(symbolCurrencyResults, availableCurrencySource: availableCurrency)
-                                
-                            }
+                        DataManager.sharedInstance.aggregateCurrencyListDataSources(currencySymbolSource, availableCurrencySource: availableCurrency)
+                        
                     }
-                }
             }
         }
     }

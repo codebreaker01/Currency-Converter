@@ -15,8 +15,19 @@ extension DataManager {
     public func aggregateCurrencyListDataSources(currencySymbolSource: Dictionary<String, AnyObject>, availableCurrencySource: Dictionary<String, String>) {
         
         Currency.findOrCreateEntity(availableCurrencySource.keys.array) { (managedObj) -> Void in
-            println(managedObj)
+            var currency = managedObj as? Currency
+            if currency != nil {
+                if let currencyName = availableCurrencySource[currency!.currencyId] {
+                    currency?.currencyName = currencyName
+                }
+                if let currencySymbolDict = currencySymbolSource[currency!.currencyId] as? Dictionary<String, String> {
+                    if let currencySymbol = currencySymbolDict["currencySymbol"] {
+                        currency?.currencySymbol = currencySymbol
+                    }
+                }
+            }
         }
+        self.saveContext()
     }
     
     public func manageExchangeRates(base:String, rates:Dictionary<String, String>) {
@@ -48,6 +59,22 @@ extension DataManager {
     public func setBaseCurrency(base:String!) {
         NSUserDefaults.standardUserDefaults().setValue(base, forKey: kUserDefaultsBaseCurrencyKey)
         NSUserDefaults.standardUserDefaults().synchronize()
+    }
+    
+    internal func currencySymbolSource() -> Dictionary<String, AnyObject>? {
+        
+        var error: NSError?
+        if let path = NSBundle.mainBundle().pathForResource("ListCurrencySymbol", ofType: "json") {
+            if let data = NSData(contentsOfFile: path) {
+                let json:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&error)!
+                if let dictionaryObj = json as? Dictionary<String, AnyObject> {
+                    if let resultsObj = dictionaryObj["results"] as? Dictionary<String, AnyObject> {
+                        return resultsObj
+                    }
+                }
+            }
+        }
+        return nil
     }
     
     // MARK: - Internal Utilities

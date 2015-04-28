@@ -10,7 +10,7 @@ import Foundation
 
 let kJSONRatesAPIKey = "jr-6cca58fac0b91d06472a60ec74035c9e"
 
-let kURLForCurrencySymbols = "http://www.freecurrencyconverterapi.com/api/v3/countries"
+let kURLForCurrencySymbols = "http://www.freecurrencyconverterapi.com/api/v3/currencies"
 let kURLForCurrencies = "http://jsonrates.com/currencies.json"
 let kURLForLocale = "http://jsonrates.com/locales.json"
 let kURLForExchangeRate = "http://jsonrates.com/get/"

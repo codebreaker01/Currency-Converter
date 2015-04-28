@@ -45,7 +45,6 @@ extension Currency {
         }
     }
     
-    
     class func insertNewObjectInContext(context:NSManagedObjectContext) -> Currency {
         let entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: context)
         return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! Currency
