@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7700" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Currency" representedClassName="PRODUCT_MODULE_NAME.Currency" syncable="YES">
+    <entity name="Currency" representedClassName="CurrencyConverter.Currency" syncable="YES">
         <attribute name="countryName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currencyId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currencyName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currencySymbol" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="CurrencyRates" representedClassName="PRODUCT_MODULE_NAME.CurencyRates" syncable="YES">
+    <entity name="CurrencyRates" representedClassName="CurrencyConverter.CurrencyRates" syncable="YES">
         <attribute name="currencyRates" optional="YES" attributeType="Transformable" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CurrencyRates" positionX="-54" positionY="18" width="128" height="60"/>
         <element name="Currency" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="CurrencyRates" positionX="-54" positionY="18" width="128" height="60"/>
     </elements>
 </model>

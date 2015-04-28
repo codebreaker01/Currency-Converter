@@ -9,30 +9,46 @@
 import Foundation
 import CoreData
 
+let kCurrencyEntityName = "Currency"
+
 extension Currency {
     
-    func findOrCreateEntity(entity:String, currencyList:Array<String>, managedObject: ((NSManagedObject) -> Void)? ) {
+    class func findOrCreateEntity(currencyList:Array<String>, managedObject: ((NSManagedObject) -> Void)? ) {
         
         var sortedIDs = currencyList.sorted { $0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending }
         var fetchRequest: NSFetchRequest = NSFetchRequest.init()
-        fetchRequest.entity = NSEntityDescription.entityForName(entity, inManagedObjectContext: self.managedObjectContext!)
+        fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
         fetchRequest.predicate = NSPredicate(format: "currencyId IN %@", sortedIDs)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "currencyId", ascending: true)]
         var error: NSError?
-        var matchingObjects = self.managedObjectContext?.executeFetchRequest(fetchRequest, error:&error) as? Array<Currency>
+        var matchingObjects = DataManager.sharedInstance.managedObjectContext?.executeFetchRequest(fetchRequest, error:&error) as? Array<Currency>
         
-        var newManagedObjects =  Array<Currency>()
-        if matchingObjects != nil {
+        if matchingObjects != nil && matchingObjects?.count > 0 {
             for var x = 0, y = 0; x < sortedIDs.count; x++ {
-                if let currency = matchingObjects?[y] {
-                    if sortedIDs[x] != currency.currencyId {
-                        newManagedObjects.append(NSEntityDescription.insertNewObjectForEntityForName("Currency", inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!) as! Currency)
+                if let currencyFromDb = matchingObjects?[y] {
+                    if sortedIDs[x] != currencyFromDb.currencyId {
+                        var currency = Currency.insertNewObjectInContext(DataManager.sharedInstance.managedObjectContext!)
+                        currency.currencyId = sortedIDs[x]
+                        managedObject?(currency)
                     } else {
+                        managedObject?(currencyFromDb)
                         y++
                     }
                 }
             }
+        } else {
+            for currencyId in sortedIDs {
+                var currency = Currency.insertNewObjectInContext(DataManager.sharedInstance.managedObjectContext!)
+                currency.currencyId = currencyId
+                managedObject?(currency)
+            }
         }
-        matchingObjects? += newManagedObjects
     }
+    
+    
+    class func insertNewObjectInContext(context:NSManagedObjectContext) -> Currency {
+        let entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: context)
+        return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! Currency
+    }
+    
 }

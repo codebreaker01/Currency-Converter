@@ -14,10 +14,8 @@ extension DataManager {
     
     public func aggregateCurrencyListDataSources(currencySymbolSource: Dictionary<String, AnyObject>, availableCurrencySource: Dictionary<String, String>) {
         
-        for availableCurrency in availableCurrencySource.keys {
-            if let currencySymbol = currencySymbolSource[availableCurrency] as? Dictionary<String, String> {
-                
-            }
+        Currency.findOrCreateEntity(availableCurrencySource.keys.array) { (managedObj) -> Void in
+            println(managedObj)
         }
     }
     
