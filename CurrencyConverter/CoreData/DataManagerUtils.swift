@@ -12,15 +12,21 @@ extension DataManager {
     
     // MARK: - Public Utilities
     
-    public func aggregateCurrencyListDataSources(currencySymbolSource: Dictionary<String, AnyObject>, availableCurrencySource: Dictionary<String, AnyObject>) {
+    public func aggregateCurrencyListDataSources(currencySymbolSource: Dictionary<String, AnyObject>, availableCurrencySource: Dictionary<String, String>) {
         
+        for availableCurrency in availableCurrencySource.keys {
+            if let currencySymbol = currencySymbolSource[availableCurrency] as? Dictionary<String, String> {
+                
+            }
+        }
     }
     
-    public func manageExchangeRates(base:String!, rates:Array<String>?) {
+    public func manageExchangeRates(base:String, rates:Dictionary<String, String>) {
         
+
     }
     
-    public func manageHistoricalData(from:String!, to:String!, rates:Array<AnyObject>?) {
+    public func manageHistoricalData(from:String, to:String, rates:Dictionary<String, String>) {
         
     }
     

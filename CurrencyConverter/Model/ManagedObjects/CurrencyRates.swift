@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-class CurencyRates: NSManagedObject {
+class CurrencyRates: NSManagedObject {
 
     @NSManaged var currencyRates: AnyObject
 

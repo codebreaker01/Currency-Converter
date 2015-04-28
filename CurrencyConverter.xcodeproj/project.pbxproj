@@ -16,7 +16,6 @@
 		07A0DD5F1AEC817700005589 /* CurrencyConverter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07A0DD5D1AEC817700005589 /* CurrencyConverter.xcdatamodeld */; };
 		07A0DD611AEC818100005589 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0DD601AEC818100005589 /* DataManager.swift */; };
 		07A0DD631AEC833C00005589 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0DD621AEC833C00005589 /* Constants.swift */; };
-		07A0DD721AEC8C9F00005589 /* CurencyRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0DD701AEC8C9F00005589 /* CurencyRates.swift */; };
 		07A0DD731AEC8C9F00005589 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0DD711AEC8C9F00005589 /* Currency.swift */; };
 		07A0DD751AEC949800005589 /* DataManagerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A0DD741AEC949800005589 /* DataManagerUtils.swift */; };
 		07B476D01AEC4B09005D424D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B476CF1AEC4B09005D424D /* AppDelegate.swift */; };
@@ -25,6 +24,8 @@
 		07B476E91AEC4B09005D424D /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B476E81AEC4B09005D424D /* CurrencyConverterTests.swift */; };
 		07B476F41AEC4D6B005D424D /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B476F31AEC4D6B005D424D /* WebServiceClient.swift */; };
 		07B476F91AEC4DAD005D424D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B476F81AEC4DAD005D424D /* ViewController.swift */; };
+		07EB126C1AEEA20C00FB3B96 /* CurrencyRatesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB126B1AEEA20C00FB3B96 /* CurrencyRatesUtils.swift */; };
+		07EB126E1AEEE37800FB3B96 /* CurrencyRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB126D1AEEE37800FB3B96 /* CurrencyRates.swift */; };
 		EE5E0A3415A4FF033EF069F9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BD9464569B5EFDEAAB8794 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,7 +49,6 @@
 		07A0DD5E1AEC817700005589 /* CurrencyConverter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrencyConverter.xcdatamodel; sourceTree = "<group>"; };
 		07A0DD601AEC818100005589 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		07A0DD621AEC833C00005589 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		07A0DD701AEC8C9F00005589 /* CurencyRates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurencyRates.swift; sourceTree = "<group>"; };
 		07A0DD711AEC8C9F00005589 /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		07A0DD741AEC949800005589 /* DataManagerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManagerUtils.swift; sourceTree = "<group>"; };
 		07B476CA1AEC4B09005D424D /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +62,8 @@
 		07B476F31AEC4D6B005D424D /* WebServiceClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceClient.swift; sourceTree = "<group>"; };
 		07B476F81AEC4DAD005D424D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07E19B16C0EF766FCEA8BCC2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		07EB126B1AEEA20C00FB3B96 /* CurrencyRatesUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRatesUtils.swift; sourceTree = "<group>"; };
+		07EB126D1AEEE37800FB3B96 /* CurrencyRates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyRates.swift; sourceTree = "<group>"; };
 		86640477D9FA0F70BEBA9792 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D6BD9464569B5EFDEAAB8794 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 		07B18E191AEC8C0800BC0933 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				07EB126B1AEEA20C00FB3B96 /* CurrencyRatesUtils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -124,8 +127,8 @@
 		07B18E1A1AEC8C0800BC0933 /* ManagedObjects */ = {
 			isa = PBXGroup;
 			children = (
-				07A0DD701AEC8C9F00005589 /* CurencyRates.swift */,
 				07A0DD711AEC8C9F00005589 /* Currency.swift */,
+				07EB126D1AEEE37800FB3B96 /* CurrencyRates.swift */,
 			);
 			path = ManagedObjects;
 			sourceTree = "<group>";
@@ -411,11 +414,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				07B476D01AEC4B09005D424D /* AppDelegate.swift in Sources */,
+				07EB126E1AEEE37800FB3B96 /* CurrencyRates.swift in Sources */,
 				07A0DD611AEC818100005589 /* DataManager.swift in Sources */,
 				07A0DD5F1AEC817700005589 /* CurrencyConverter.xcdatamodeld in Sources */,
 				07B476F91AEC4DAD005D424D /* ViewController.swift in Sources */,
+				07EB126C1AEEA20C00FB3B96 /* CurrencyRatesUtils.swift in Sources */,
 				07A0DD731AEC8C9F00005589 /* Currency.swift in Sources */,
-				07A0DD721AEC8C9F00005589 /* CurencyRates.swift in Sources */,
 				07A0DD751AEC949800005589 /* DataManagerUtils.swift in Sources */,
 				07B476F41AEC4D6B005D424D /* WebServiceClient.swift in Sources */,
 				07A0DD631AEC833C00005589 /* Constants.swift in Sources */,

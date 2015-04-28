@@ -31,7 +31,7 @@ public class WebServiceClient  {
                     Alamofire.request(.GET, kURLForCurrencies)
                         .responseJSON { (_, _, availableCurrencyJSON, _) in
                             
-                            if let availableCurrency = availableCurrencyJSON as? Dictionary<String, AnyObject> {
+                            if let availableCurrency = availableCurrencyJSON as? Dictionary<String, String> {
                                 
                                 DataManager.sharedInstance.aggregateCurrencyListDataSources(symbolCurrencyResults, availableCurrencySource: availableCurrency)
                                 
@@ -54,9 +54,9 @@ public class WebServiceClient  {
                 
                 if let json = results as? Dictionary<String, AnyObject> {
                     
-                    if let rates = json["rates"] as? Array<String> {
+                    if let rates = json["rates"] as? Dictionary<String, String> {
                         
-                        DataManager.sharedInstance.manageExchangeRates(json["base"] as! String, rates: rates)
+                        DataManager.sharedInstance.manageExchangeRates(json["base"] as! String, rates:rates)
                         
                     }
                 }
@@ -78,9 +78,9 @@ public class WebServiceClient  {
                 
                 if let json = results as? Dictionary<String, AnyObject> {
                     
-                    if let rates = json["rates"] as? Array<String> {
+                    if let rates = json["rates"] as? Dictionary<String, String> {
                         
-                        DataManager.sharedInstance.manageHistoricalData(json["from"] as! String, to:json["to"] as! String, rates: json["rates"] as? Array<AnyObject>)
+                        DataManager.sharedInstance.manageHistoricalData(json["from"] as! String, to:json["to"] as! String, rates:rates)
                     }
                 }
         }
