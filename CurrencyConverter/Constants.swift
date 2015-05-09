@@ -15,5 +15,3 @@ let kURLForCurrencies = "http://jsonrates.com/currencies.json"
 let kURLForLocale = "http://jsonrates.com/locales.json"
 let kURLForExchangeRate = "http://jsonrates.com/get/"
 let kURLForHistoricalData = "http://jsonrates.com/historical/"
-
-let kUserDefaultsBaseCurrencyKey = "kUserDefaultsBaseCurrencyKey"

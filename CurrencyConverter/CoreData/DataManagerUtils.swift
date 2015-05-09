@@ -52,26 +52,16 @@ extension DataManager {
         hr.rates = rates
     }
     
-    public func getBaseCurrency() -> String? {
+    public func getBaseCurrencyFromLocale() -> String {
         
-        if let base = NSUserDefaults.standardUserDefaults().valueForKey(kUserDefaultsBaseCurrencyKey) as? String {
-            return base
-        } else {
-            
-            if let countryCode = NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as? String {
-                if let country = NSLocale.currentLocale().displayNameForKey(NSLocaleCountryCode, value: countryCode) {
-                    if let currencyCode = self.countryToCurrencyCode(country) {
-                        return currencyCode;
-                    }
+        if let countryCode = NSLocale.currentLocale().objectForKey(NSLocaleCountryCode) as? String {
+            if let country = NSLocale.currentLocale().displayNameForKey(NSLocaleCountryCode, value: countryCode) {
+                if let currencyCode = self.countryToCurrencyCode(country) {
+                    return currencyCode;
                 }
             }
         }
         return "USD"
-    }
-    
-    public func setBaseCurrency(base:String!) {
-        NSUserDefaults.standardUserDefaults().setValue(base, forKey: kUserDefaultsBaseCurrencyKey)
-        NSUserDefaults.standardUserDefaults().synchronize()
     }
     
     internal func currencySymbolSource() -> Dictionary<String, AnyObject>? {
