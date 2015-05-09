@@ -33,4 +33,5 @@ extension HistoricalRates {
         let entity = NSEntityDescription.entityForName(kHistoricalRatesEntityName, inManagedObjectContext: context)
         return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! HistoricalRates
     }
+    
 }

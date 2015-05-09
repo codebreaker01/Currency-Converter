@@ -31,6 +31,9 @@
 		07EB126C1AEEA20C00FB3B96 /* CurrencyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB126B1AEEA20C00FB3B96 /* CurrencyUtils.swift */; };
 		07FF484A1AFE0E9A004175E9 /* HistoricalDatesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF48491AFE0E9A004175E9 /* HistoricalDatesUtils.swift */; };
 		07FF48501AFE1018004175E9 /* HistoricalRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF484F1AFE1018004175E9 /* HistoricalRates.swift */; };
+		07FF48521AFE14B3004175E9 /* SelectedCurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF48511AFE14B3004175E9 /* SelectedCurrenciesViewController.swift */; };
+		07FF48541AFE1571004175E9 /* AddCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF48531AFE1571004175E9 /* AddCurrencyViewController.swift */; };
+		07FF48561AFE158D004175E9 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF48551AFE158D004175E9 /* SettingsViewController.swift */; };
 		EE5E0A3415A4FF033EF069F9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BD9464569B5EFDEAAB8794 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -74,6 +77,9 @@
 		07EB126B1AEEA20C00FB3B96 /* CurrencyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyUtils.swift; sourceTree = "<group>"; };
 		07FF48491AFE0E9A004175E9 /* HistoricalDatesUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalDatesUtils.swift; sourceTree = "<group>"; };
 		07FF484F1AFE1018004175E9 /* HistoricalRates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoricalRates.swift; path = CurrencyConverter/Model/ManagedObjects/HistoricalRates.swift; sourceTree = SOURCE_ROOT; };
+		07FF48511AFE14B3004175E9 /* SelectedCurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedCurrenciesViewController.swift; sourceTree = "<group>"; };
+		07FF48531AFE1571004175E9 /* AddCurrencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewController.swift; sourceTree = "<group>"; };
+		07FF48551AFE158D004175E9 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		86640477D9FA0F70BEBA9792 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D6BD9464569B5EFDEAAB8794 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -239,6 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				07B476F81AEC4DAD005D424D /* ViewController.swift */,
+				07FF48511AFE14B3004175E9 /* SelectedCurrenciesViewController.swift */,
+				07FF48531AFE1571004175E9 /* AddCurrencyViewController.swift */,
+				07FF48551AFE158D004175E9 /* SettingsViewController.swift */,
 			);
 			name = ViewControllers;
 			path = ViewController;
@@ -447,10 +456,13 @@
 				07A0DD731AEC8C9F00005589 /* Currency.swift in Sources */,
 				07FF484A1AFE0E9A004175E9 /* HistoricalDatesUtils.swift in Sources */,
 				07A0DD751AEC949800005589 /* DataManagerUtils.swift in Sources */,
+				07FF48541AFE1571004175E9 /* AddCurrencyViewController.swift in Sources */,
 				07B476F41AEC4D6B005D424D /* WebServiceClient.swift in Sources */,
 				07851AF01AEF3D7F00DAD5CB /* CurrencyRatesUtils.swift in Sources */,
 				07A0DD631AEC833C00005589 /* Constants.swift in Sources */,
 				0759DDB51AEF4745006D046B /* DictionaryUtils.swift in Sources */,
+				07FF48521AFE14B3004175E9 /* SelectedCurrenciesViewController.swift in Sources */,
+				07FF48561AFE158D004175E9 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

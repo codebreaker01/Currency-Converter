@@ -31,4 +31,5 @@ extension CurrencyRates {
         let entity = NSEntityDescription.entityForName(kCurrencyRatesEntityName, inManagedObjectContext: context)
         return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! CurrencyRates
     }
+    
 }
