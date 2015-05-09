@@ -29,6 +29,8 @@
 		07B476F41AEC4D6B005D424D /* WebServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B476F31AEC4D6B005D424D /* WebServiceClient.swift */; };
 		07B476F91AEC4DAD005D424D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B476F81AEC4DAD005D424D /* ViewController.swift */; };
 		07EB126C1AEEA20C00FB3B96 /* CurrencyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB126B1AEEA20C00FB3B96 /* CurrencyUtils.swift */; };
+		07FF484A1AFE0E9A004175E9 /* HistoricalDatesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF48491AFE0E9A004175E9 /* HistoricalDatesUtils.swift */; };
+		07FF48501AFE1018004175E9 /* HistoricalRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF484F1AFE1018004175E9 /* HistoricalRates.swift */; };
 		EE5E0A3415A4FF033EF069F9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6BD9464569B5EFDEAAB8794 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		07B476F81AEC4DAD005D424D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07E19B16C0EF766FCEA8BCC2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		07EB126B1AEEA20C00FB3B96 /* CurrencyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyUtils.swift; sourceTree = "<group>"; };
+		07FF48491AFE0E9A004175E9 /* HistoricalDatesUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricalDatesUtils.swift; sourceTree = "<group>"; };
+		07FF484F1AFE1018004175E9 /* HistoricalRates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoricalRates.swift; path = CurrencyConverter/Model/ManagedObjects/HistoricalRates.swift; sourceTree = SOURCE_ROOT; };
 		86640477D9FA0F70BEBA9792 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D6BD9464569B5EFDEAAB8794 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,6 +140,7 @@
 			children = (
 				07EB126B1AEEA20C00FB3B96 /* CurrencyUtils.swift */,
 				07851AEF1AEF3D7F00DAD5CB /* CurrencyRatesUtils.swift */,
+				07FF48491AFE0E9A004175E9 /* HistoricalDatesUtils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				07A0DD711AEC8C9F00005589 /* Currency.swift */,
+				07FF484F1AFE1018004175E9 /* HistoricalRates.swift */,
 				07851AF31AEF40CA00DAD5CB /* CurrencyRates.swift */,
 			);
 			path = ManagedObjects;
@@ -437,7 +443,9 @@
 				07851AF41AEF40CA00DAD5CB /* CurrencyRates.swift in Sources */,
 				07B476F91AEC4DAD005D424D /* ViewController.swift in Sources */,
 				07EB126C1AEEA20C00FB3B96 /* CurrencyUtils.swift in Sources */,
+				07FF48501AFE1018004175E9 /* HistoricalRates.swift in Sources */,
 				07A0DD731AEC8C9F00005589 /* Currency.swift in Sources */,
+				07FF484A1AFE0E9A004175E9 /* HistoricalDatesUtils.swift in Sources */,
 				07A0DD751AEC949800005589 /* DataManagerUtils.swift in Sources */,
 				07B476F41AEC4D6B005D424D /* WebServiceClient.swift in Sources */,
 				07851AF01AEF3D7F00DAD5CB /* CurrencyRatesUtils.swift in Sources */,
@@ -568,9 +576,11 @@
 			baseConfigurationReference = 86640477D9FA0F70BEBA9792 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -579,9 +589,11 @@
 			baseConfigurationReference = 07E19B16C0EF766FCEA8BCC2 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

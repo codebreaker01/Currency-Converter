@@ -46,6 +46,10 @@ extension DataManager {
     
     public func manageHistoricalData(from:String, to:String, rates:Dictionary<String, String>) {
         
+        var hr = HistoricalRates.insertNewObjectInContext(DataManager.sharedInstance.managedObjectContext!)
+        hr.currencyFrom = from
+        hr.currencyTo = to
+        hr.rates = rates
     }
     
     public func getBaseCurrency() -> String? {

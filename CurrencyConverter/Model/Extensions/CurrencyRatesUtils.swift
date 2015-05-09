@@ -16,7 +16,7 @@ extension CurrencyRates {
     class func deleteAll() {
         
         var fetchRequest = NSFetchRequest()
-        fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
+        fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyRatesEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
         fetchRequest.includesPropertyValues = false
         var error: NSError?
         var objs = DataManager.sharedInstance.managedObjectContext?.executeFetchRequest(fetchRequest, error: &error) as! Array<NSManagedObject>
