@@ -7,9 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
-class SelectedCurrenciesViewController: UIViewController {
+class SelectedCurrenciesViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
+    // MARK:- Properties
+    
+    lazy var fetchedResultsController : NSFetchedResultsController = {
+        let fetchRC = NSFetchedResultsController(
+            fetchRequest: Currency.getSelectedCurrenciesFetchReqest(),
+            managedObjectContext: DataManager.sharedInstance.managedObjectContext!,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        
+        fetchRC.delegate = self
+        return fetchRC
+    } ()
+    
+    // MARK:- Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

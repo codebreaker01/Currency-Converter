@@ -10,8 +10,12 @@ import Foundation
 import CoreData
 
 let kCurrencyEntityName = "Currency"
+let defaultCurrencies = ["USD", "EURO", "GBP", "CAD", "AUD", "INR", "CNY"]
 
 extension Currency {
+
+    
+    // MARK: - Find/Edit/Create Utils
     
     class func findOrCreateEntity(currencyList:Array<String>, managedObject: ((NSManagedObject) -> Void)? ) {
         
@@ -45,8 +49,13 @@ extension Currency {
         }
     }
     
-    class func addCurrency(currency:Currency) {
+    class func addSelectedCurrency(currency:Currency) {
         currency.selected = true
+        DataManager.sharedInstance.saveContext()
+    }
+    
+    class func removeSelectedCurrency(currency:Currency) {
+        currency.selected = false
         DataManager.sharedInstance.saveContext()
     }
     
@@ -76,6 +85,7 @@ extension Currency {
     }
     
     class func getCurrency(currencyName:String) -> Currency? {
+        
         var fetchRequest = NSFetchRequest()
         fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
         fetchRequest.predicate = NSPredicate(format: "(currencyName == %@)", currencyName)
@@ -85,27 +95,23 @@ extension Currency {
         return results?.first
     }
     
-    class func getDefaultCurrencies() -> Array<Currency>? {
+    class func setDefaultCurrencies() {
         
-        var fetchRequest = NSFetchRequest()
-        fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
-        fetchRequest.predicate = NSPredicate(format: "(selected == 1)")
-        
-        var error: NSError?
-        var results = DataManager.sharedInstance.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as? Array<Currency>
-        return results
+        for currencyName in defaultCurrencies {
+            var currency = getCurrency(currencyName)
+            currency?.selected = true
+        }
+        DataManager.sharedInstance.saveContext()
     }
     
-    class func getSelectedCurrencies() -> Array<Currency>? {
+    class func getSelectedCurrenciesFetchReqest() -> NSFetchRequest {
         
         var fetchRequest = NSFetchRequest()
         fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
         fetchRequest.predicate = NSPredicate(format: "(selected == 1)")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "currencyName", ascending: true), NSSortDescriptor(key: "isBase", ascending: false)]
-        
-        var error: NSError?
-        var results = DataManager.sharedInstance.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as? Array<Currency>
-        return results
+
+        return fetchRequest
     }
     
     class func insertNewObjectInContext(context:NSManagedObjectContext) -> Currency {
