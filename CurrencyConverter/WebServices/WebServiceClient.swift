@@ -17,7 +17,7 @@ public class WebServiceClient  {
     
     // MARK: - Web Services
     
-    public func buildCurrencyList() {
+    public func buildCurrencyList(completion:(() -> Void)?) {
         
         if let currencySymbolSource = DataManager.sharedInstance.currencySymbolSource() {
             
@@ -28,13 +28,13 @@ public class WebServiceClient  {
                     if let availableCurrency = availableCurrencyJSON as? Dictionary<String, String> {
                         
                         DataManager.sharedInstance.aggregateCurrencyListDataSources(currencySymbolSource, availableCurrencySource: availableCurrency)
-                        
+                        completion?()
                     }
             }
         }
     }
     
-    public func getCurrencyRates() {
+    public func getCurrencyRates(completion:(() -> Void)?) {
         
         let params = [
             "base" : "USD",
@@ -49,13 +49,13 @@ public class WebServiceClient  {
                     if let rates = json["rates"] as? Dictionary<String, String> {
                         
                         DataManager.sharedInstance.manageExchangeRates(json["base"] as! String, lastUpdated: json["utctime"] as! String, rates:rates)
-                        
+                        completion?()
                     }
                 }
         }
     }
     
-    public func getHistoricalRates(from:NSString!, to:NSString!, start:NSDate!, end:NSDate!) {
+    public func getHistoricalRates(from:NSString!, to:NSString!, start:NSDate!, end:NSDate!, completion:(() -> Void)?) {
         
         let params = [
             "from"      : from,
@@ -73,6 +73,7 @@ public class WebServiceClient  {
                     if let rates = json["rates"] as? Dictionary<String, String> {
                         
                         DataManager.sharedInstance.manageHistoricalData(json["from"] as! String, to:json["to"] as! String, rates:rates)
+                        completion?()
                     }
                 }
         }

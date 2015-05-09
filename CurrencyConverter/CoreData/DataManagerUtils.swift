@@ -10,7 +10,7 @@ import Foundation
 
 extension DataManager {
     
-    // MARK: - Public Utilities
+    // MARK: - Public Data Management Utilities
     
     public func aggregateCurrencyListDataSources(currencySymbolSource: Dictionary<String, AnyObject>, availableCurrencySource: Dictionary<String, String>) {
         

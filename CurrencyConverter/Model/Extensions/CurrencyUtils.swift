@@ -88,7 +88,7 @@ extension Currency {
         
         var fetchRequest = NSFetchRequest()
         fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
-        fetchRequest.predicate = NSPredicate(format: "(currencyName == %@)", currencyName)
+        fetchRequest.predicate = NSPredicate(format: "(currencyId == %@)", currencyName)
         
         var error: NSError?
         var results = DataManager.sharedInstance.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as? Array<Currency>
@@ -101,6 +101,7 @@ extension Currency {
             var currency = getCurrency(currencyName)
             currency?.selected = true
         }
+        _ = getBaseCurrency()
         DataManager.sharedInstance.saveContext()
     }
     
