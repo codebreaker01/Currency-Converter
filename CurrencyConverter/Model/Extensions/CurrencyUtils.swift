@@ -45,6 +45,17 @@ extension Currency {
         }
     }
     
+    class func getSelectedCurrencies() -> Array<Currency>? {
+        
+        var fetchRequest = NSFetchRequest()
+        fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
+        fetchRequest.predicate = NSPredicate(format: "(selected == 1)")
+        
+        var error: NSError?;
+        var results = DataManager.sharedInstance.managedObjectContext!.executeFetchRequest(fetchRequest, error: &error) as? Array<Currency>
+        return results
+    }
+    
     class func insertNewObjectInContext(context:NSManagedObjectContext) -> Currency {
         let entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: context)
         return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! Currency
