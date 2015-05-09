@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     // MARK:- View Properties
     
@@ -35,6 +35,8 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.collectionView.registerNib(UINib(nibName: "CurrencyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCurrencyCollectionViewCellIdentifier)
         
         WebServiceClient.sharedInstance.buildCurrencyList() {
             
@@ -83,7 +85,12 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
         
     }
     
-    // MARK: - UICollectionViewDelegate
+    // MARK: - UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSize(width: self.view.bounds.size.width, height: 80)
+    }
+    
     
     // MARK: - NSFetchedResultsControllerDelegate
     
