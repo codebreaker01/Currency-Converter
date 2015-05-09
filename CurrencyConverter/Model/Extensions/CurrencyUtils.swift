@@ -45,6 +45,11 @@ extension Currency {
         }
     }
     
+    class func addCurrency(currency:Currency) {
+        currency.selected = true
+        DataManager.sharedInstance.saveContext()
+    }
+    
     class func getSelectedCurrencies() -> Array<Currency>? {
         
         var fetchRequest = NSFetchRequest()
