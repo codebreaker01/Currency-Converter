@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 extension DataManager {
     
@@ -44,12 +45,21 @@ extension DataManager {
         DataManager.sharedInstance.saveContext()
     }
     
+    public func aggregateCurrencyWithCurrencyRates() {
+        
+        if let currencyRates = CurrencyRates.getAll() {
+            Currency.updateWithCurrencyRates(currencyRates)
+            DataManager.sharedInstance.saveContext()
+        }
+    }
+    
     public func manageHistoricalData(from:String, to:String, rates:Dictionary<String, String>) {
         
         var hr = HistoricalRates.insertNewObjectInContext(DataManager.sharedInstance.managedObjectContext!)
         hr.currencyFrom = from
         hr.currencyTo = to
         hr.rates = rates
+        DataManager.sharedInstance.saveContext()
     }
     
     public func getBaseCurrencyFromLocale() -> String {

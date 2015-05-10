@@ -15,7 +15,10 @@ class Currency: NSManagedObject {
     @NSManaged var currencyId: String
     @NSManaged var currencyName: String
     @NSManaged var currencySymbol: String
-    @NSManaged var selected: NSNumber
     @NSManaged var isBase: NSNumber
+    @NSManaged var selected: NSNumber
+    @NSManaged var rate: String
+    @NSManaged var rateDouble: NSNumber
+    @NSManaged var inverseRate: NSNumber
 
 }

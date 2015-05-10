@@ -27,6 +27,16 @@ extension CurrencyRates {
         DataManager.sharedInstance.saveContext()
     }
     
+    class func getAll() -> Dictionary<String, String>? {
+        
+        var fetchRequest = NSFetchRequest()
+        fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyRatesEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "lastUpdated", ascending: true)]
+        var error: NSError?
+        var objs = DataManager.sharedInstance.managedObjectContext?.executeFetchRequest(fetchRequest, error: &error) as? Array<CurrencyRates>
+        return objs?.first?.currencyRates as? Dictionary<String, String>
+    }
+    
     class func insertNewObjectInContext(context:NSManagedObjectContext) -> CurrencyRates {
         let entity = NSEntityDescription.entityForName(kCurrencyRatesEntityName, inManagedObjectContext: context)
         return NSManagedObject(entity: entity!, insertIntoManagedObjectContext: context) as! CurrencyRates

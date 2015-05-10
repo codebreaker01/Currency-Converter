@@ -49,6 +49,36 @@ extension Currency {
         }
     }
     
+    class func updateWithCurrencyRates(currencyRates:Dictionary<String, String>) {
+        
+        var sortedIDs = currencyRates.keys.array.sorted { $0.localizedCaseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending }
+        var fetchRequest: NSFetchRequest = NSFetchRequest.init()
+        fetchRequest.entity = NSEntityDescription.entityForName(kCurrencyEntityName, inManagedObjectContext: DataManager.sharedInstance.managedObjectContext!)
+        fetchRequest.predicate = NSPredicate(format: "currencyId IN %@", sortedIDs)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "currencyId", ascending: true)]
+        var error: NSError?
+        var matchingObjects = DataManager.sharedInstance.managedObjectContext?.executeFetchRequest(fetchRequest, error:&error) as? Array<Currency>
+        
+        if matchingObjects != nil && matchingObjects?.count > 0 {
+            for var x = 0, y = 0; x < sortedIDs.count; x++ {
+                if let currencyFromDb = matchingObjects?[y] {
+                    if sortedIDs[x] == currencyFromDb.currencyId {
+                        if let rate = currencyRates[sortedIDs[x]] {
+                            currencyFromDb.rate = rate
+                            currencyFromDb.rateDouble = (rate as NSString).doubleValue
+                            if currencyFromDb.rateDouble.doubleValue > 0 {
+                                currencyFromDb.inverseRate = 1/currencyFromDb.rateDouble.doubleValue
+                            } else {
+                                currencyFromDb.inverseRate = 0
+                            }
+                        }
+                        y++
+                    }
+                }
+            }
+        }
+    }
+    
     class func addSelectedCurrency(currency:Currency) {
         currency.selected = true
         DataManager.sharedInstance.saveContext()
@@ -79,7 +109,6 @@ extension Currency {
         } else {
             var base = getCurrency(DataManager.sharedInstance.getBaseCurrencyFromLocale())
             base?.isBase = true
-            DataManager.sharedInstance.saveContext()
             return base
         }
     }

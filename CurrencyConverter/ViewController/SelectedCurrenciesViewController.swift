@@ -40,17 +40,18 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
         
         WebServiceClient.sharedInstance.buildCurrencyList() {
             
-            var error : NSError?
-            self.fetchedResultsController.performFetch(&error)
-            
-            if let n = (self.fetchedResultsController.sections?.first as? NSFetchedResultsSectionInfo)?.numberOfObjects {
-                if n == 0 {
-                    Currency.setDefaultCurrencies()
-                    self.fetchedResultsController.performFetch(&error)
+            WebServiceClient.sharedInstance.getCurrencyRates() {
+                
+                var error : NSError?
+                self.fetchedResultsController.performFetch(&error)
+                if let n = (self.fetchedResultsController.sections?.first as? NSFetchedResultsSectionInfo)?.numberOfObjects {
+                    if n == 0 {
+                        Currency.setDefaultCurrencies()
+                        self.fetchedResultsController.performFetch(&error)
+                    }
                 }
+                self.collectionView.reloadData()
             }
-            
-            self.collectionView.reloadData()
         }
     }
     

@@ -12,8 +12,20 @@ let kCurrencyCollectionViewCellIdentifier = "CurrencyCollectionViewCellIdentifie
 
 class CurrencyCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - UI Properties
+    
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var currencyName: UILabel!
+    @IBOutlet weak var currencyImage: UIImageView!
+    
+    var currency: Currency? {
+        
+        willSet(newCurrencyValue) {
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
 }

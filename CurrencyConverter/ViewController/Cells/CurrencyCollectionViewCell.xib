@@ -12,17 +12,21 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="370" height="95"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xn5-pa-wR3">
-                        <rect key="frame" x="8" y="8" width="81" height="79"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xn5-pa-wR3">
+                        <rect key="frame" x="5" y="23" width="75" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="WdR-0a-8vR"/>
+                            <constraint firstAttribute="width" constant="75" id="amc-FR-6d4"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIi-VC-cPb">
-                        <rect key="frame" x="109" y="37" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-9f-7O4">
+                        <rect key="frame" x="310" y="37" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-9f-7O4">
-                        <rect key="frame" x="310" y="37" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIi-VC-cPb">
+                        <rect key="frame" x="94" y="37" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -30,8 +34,17 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <constraints>
+                <constraint firstAttribute="centerY" secondItem="xn5-pa-wR3" secondAttribute="centerY" id="Vyd-K6-jOW"/>
+                <constraint firstItem="xn5-pa-wR3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="tkC-V1-vMm"/>
+            </constraints>
             <size key="customSize" width="370" height="95"/>
-            <point key="canvasLocation" x="-237" y="332.5"/>
+            <connections>
+                <outlet property="amountLabel" destination="YB5-9f-7O4" id="8BC-k4-9Y7"/>
+                <outlet property="currencyImage" destination="xn5-pa-wR3" id="Su6-UD-L9Q"/>
+                <outlet property="currencyName" destination="FIi-VC-cPb" id="OFH-jd-A94"/>
+            </connections>
+            <point key="canvasLocation" x="-513" y="306.5"/>
         </collectionViewCell>
     </objects>
 </document>
