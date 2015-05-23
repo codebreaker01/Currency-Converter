@@ -81,7 +81,8 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
     func configureCell(cell:UICollectionViewCell, atIndexPath:NSIndexPath) {
         
         if let currency = self.fetchedResultsController.objectAtIndexPath(atIndexPath) as? Currency {
-            
+            var currencyCell = cell as? CurrencyCollectionViewCell
+            currencyCell?.currency = currency
         }
         
     }
@@ -89,7 +90,11 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
     // MARK: - UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSize(width: self.view.bounds.size.width, height: 80)
+        return CGSize(width: self.view.bounds.size.width, height: 90)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0
     }
     
     

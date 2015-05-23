@@ -15,12 +15,17 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Properties
     
     @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var currencyName: UILabel!
+    @IBOutlet weak var currencyCode: UILabel!
     @IBOutlet weak var currencyImage: UIImageView!
+    @IBOutlet weak var currencyName: UILabel!
     
     var currency: Currency? {
         
         willSet(newCurrencyValue) {
+            self.amountLabel.text = newCurrencyValue!.rate
+            self.currencyCode.text = newCurrencyValue!.currencyId
+            self.currencyImage.image = UIImage(named: "\((newCurrencyValue!.currencyId as NSString).substringToIndex(2).lowercaseString)")
+            self.currencyName.text = newCurrencyValue?.currencyName
         }
     }
     

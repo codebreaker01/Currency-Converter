@@ -18,6 +18,10 @@ extension UIColor {
         return UIColor(rgba: "#304e6c")
     }
     
+    public class func themeDarkBlueLineColor() -> UIColor {
+        return UIColor(rgba: "#3D5178")
+    }
+    
     convenience init(rgba: String) {
         var red:   CGFloat = 0.0
         var green: CGFloat = 0.0

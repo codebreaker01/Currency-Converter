@@ -1,50 +1,93 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Light.ttf">
+            <string>Lato-Light</string>
+        </mutableArray>
+        <mutableArray key="Quicksand-Regular.otf">
+            <string>Quicksand-Regular</string>
+            <string>Quicksand-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CurrencyCollectionViewCell" customModule="CurrencyConverter" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="370" height="95"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CurrencyCollectionViewCell" customModule="xCurrency" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="90"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="370" height="95"/>
+                <rect key="frame" x="0.0" y="0.0" width="370" height="90"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xn5-pa-wR3">
-                        <rect key="frame" x="5" y="23" width="75" height="50"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-9f-7O4">
+                        <rect key="frame" x="140" y="30" width="220" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="WdR-0a-8vR"/>
-                            <constraint firstAttribute="width" constant="75" id="amc-FR-6d4"/>
+                            <constraint firstAttribute="width" constant="220" id="5ff-u6-ia1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="25"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIi-VC-cPb">
+                        <rect key="frame" x="47" y="15" width="80" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="0Jp-IP-v6G"/>
+                            <constraint firstAttribute="width" constant="80" id="TNt-d9-fri"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="36"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view multipleTouchEnabled="YES" alpha="0.19999999999999968" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7e-da-iSg">
+                        <rect key="frame" x="0.0" y="89" width="370" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="R9r-DB-pnR"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999987" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United States Dollar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RgI-Lu-scE">
+                        <rect key="frame" x="10" y="53" width="244" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="8Mn-Vn-AIo"/>
+                            <constraint firstAttribute="width" constant="244" id="Ny9-9D-dY4"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Quicksand-Regular" family="Quicksand" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xn5-pa-wR3">
+                        <rect key="frame" x="10" y="21" width="27" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="27" id="JFA-y4-StV"/>
+                            <constraint firstAttribute="height" constant="27" id="l8p-Ms-b3B"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-9f-7O4">
-                        <rect key="frame" x="310" y="37" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FIi-VC-cPb">
-                        <rect key="frame" x="94" y="37" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="xn5-pa-wR3" secondAttribute="centerY" id="Vyd-K6-jOW"/>
-                <constraint firstItem="xn5-pa-wR3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="tkC-V1-vMm"/>
+                <constraint firstItem="RgI-Lu-scE" firstAttribute="top" secondItem="xn5-pa-wR3" secondAttribute="bottom" constant="5" id="G6H-ZX-E5y"/>
+                <constraint firstItem="RgI-Lu-scE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="GVz-Q7-066"/>
+                <constraint firstItem="w7e-da-iSg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J8k-up-wvc"/>
+                <constraint firstItem="FIi-VC-cPb" firstAttribute="leading" secondItem="xn5-pa-wR3" secondAttribute="trailing" constant="10" id="aUe-Yu-E38"/>
+                <constraint firstAttribute="centerY" secondItem="YB5-9f-7O4" secondAttribute="centerY" id="eRQ-9B-9xQ"/>
+                <constraint firstAttribute="trailing" secondItem="w7e-da-iSg" secondAttribute="trailing" id="hPU-9h-JdF"/>
+                <constraint firstAttribute="trailing" secondItem="YB5-9f-7O4" secondAttribute="trailing" constant="10" id="hZW-a7-HDd"/>
+                <constraint firstItem="FIi-VC-cPb" firstAttribute="centerY" secondItem="xn5-pa-wR3" secondAttribute="centerY" id="jFz-7v-4Vj"/>
+                <constraint firstItem="xn5-pa-wR3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="tkC-V1-vMm"/>
+                <constraint firstAttribute="bottom" secondItem="w7e-da-iSg" secondAttribute="bottom" id="wP7-F0-mSQ"/>
+                <constraint firstAttribute="centerY" secondItem="xn5-pa-wR3" secondAttribute="centerY" constant="10" id="ydU-bZ-iWF"/>
             </constraints>
-            <size key="customSize" width="370" height="95"/>
+            <size key="customSize" width="370" height="88"/>
             <connections>
                 <outlet property="amountLabel" destination="YB5-9f-7O4" id="8BC-k4-9Y7"/>
+                <outlet property="currencyCode" destination="FIi-VC-cPb" id="AAh-iB-k5H"/>
                 <outlet property="currencyImage" destination="xn5-pa-wR3" id="Su6-UD-L9Q"/>
-                <outlet property="currencyName" destination="FIi-VC-cPb" id="OFH-jd-A94"/>
+                <outlet property="currencyName" destination="RgI-Lu-scE" id="yKh-qi-W9b"/>
             </connections>
-            <point key="canvasLocation" x="-513" y="306.5"/>
+            <point key="canvasLocation" x="-849" y="444"/>
         </collectionViewCell>
     </objects>
 </document>
