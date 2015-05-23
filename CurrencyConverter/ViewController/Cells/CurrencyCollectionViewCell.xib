@@ -40,8 +40,8 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view multipleTouchEnabled="YES" alpha="0.19999999999999968" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7e-da-iSg">
-                        <rect key="frame" x="0.0" y="89" width="370" height="1"/>
+                    <view multipleTouchEnabled="YES" alpha="0.24999999999999967" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w7e-da-iSg">
+                        <rect key="frame" x="10" y="89" width="350" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="R9r-DB-pnR"/>
@@ -70,10 +70,10 @@
             <constraints>
                 <constraint firstItem="RgI-Lu-scE" firstAttribute="top" secondItem="xn5-pa-wR3" secondAttribute="bottom" constant="5" id="G6H-ZX-E5y"/>
                 <constraint firstItem="RgI-Lu-scE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="GVz-Q7-066"/>
-                <constraint firstItem="w7e-da-iSg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="J8k-up-wvc"/>
+                <constraint firstItem="w7e-da-iSg" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="J8k-up-wvc"/>
                 <constraint firstItem="FIi-VC-cPb" firstAttribute="leading" secondItem="xn5-pa-wR3" secondAttribute="trailing" constant="10" id="aUe-Yu-E38"/>
                 <constraint firstAttribute="centerY" secondItem="YB5-9f-7O4" secondAttribute="centerY" id="eRQ-9B-9xQ"/>
-                <constraint firstAttribute="trailing" secondItem="w7e-da-iSg" secondAttribute="trailing" id="hPU-9h-JdF"/>
+                <constraint firstAttribute="trailing" secondItem="w7e-da-iSg" secondAttribute="trailing" constant="10" id="hPU-9h-JdF"/>
                 <constraint firstAttribute="trailing" secondItem="YB5-9f-7O4" secondAttribute="trailing" constant="10" id="hZW-a7-HDd"/>
                 <constraint firstItem="FIi-VC-cPb" firstAttribute="centerY" secondItem="xn5-pa-wR3" secondAttribute="centerY" id="jFz-7v-4Vj"/>
                 <constraint firstItem="xn5-pa-wR3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="tkC-V1-vMm"/>
@@ -86,6 +86,7 @@
                 <outlet property="currencyCode" destination="FIi-VC-cPb" id="AAh-iB-k5H"/>
                 <outlet property="currencyImage" destination="xn5-pa-wR3" id="Su6-UD-L9Q"/>
                 <outlet property="currencyName" destination="RgI-Lu-scE" id="yKh-qi-W9b"/>
+                <outlet property="separatorHeightConstraint" destination="R9r-DB-pnR" id="aox-BH-edu"/>
             </connections>
             <point key="canvasLocation" x="-849" y="444"/>
         </collectionViewCell>

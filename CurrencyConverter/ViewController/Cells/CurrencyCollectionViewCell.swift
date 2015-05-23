@@ -19,6 +19,8 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var currencyImage: UIImageView!
     @IBOutlet weak var currencyName: UILabel!
     
+    @IBOutlet weak var separatorHeightConstraint: NSLayoutConstraint!
+    
     var currency: Currency? {
         
         willSet(newCurrencyValue) {
@@ -31,6 +33,8 @@ class CurrencyCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        self.separatorHeightConstraint.constant = 1.0/UIScreen.mainScreen().scale
     }
     
 }
