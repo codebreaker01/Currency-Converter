@@ -229,7 +229,7 @@
 		0745BF6C1B10204500B46A23 /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF4F1B10204500B46A23 /* Lato-SemiboldItalic.ttf */; };
 		0745BF6D1B10204500B46A23 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF501B10204500B46A23 /* Lato-Thin.ttf */; };
 		0745BF6E1B10204500B46A23 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF511B10204500B46A23 /* Lato-ThinItalic.ttf */; };
-		0745BF6F1B10204500B46A23 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF521B10204500B46A23 /* SIL Open Font License.txt */; };
+		0745BF6F1B10204500B46A23 /* SIL Open Font License - Lato.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF521B10204500B46A23 /* SIL Open Font License - Lato.txt */; };
 		0745BF701B10204500B46A23 /* daf7250099031398385091fb5416e385.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF541B10204500B46A23 /* daf7250099031398385091fb5416e385.jpg */; };
 		0745BF711B10204500B46A23 /* Quicksand-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF551B10204500B46A23 /* Quicksand-Bold.otf */; };
 		0745BF721B10204500B46A23 /* Quicksand-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF561B10204500B46A23 /* Quicksand-BoldItalic.otf */; };
@@ -238,7 +238,8 @@
 		0745BF751B10204500B46A23 /* Quicksand-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF591B10204500B46A23 /* Quicksand-LightItalic.otf */; };
 		0745BF761B10204500B46A23 /* Quicksand-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF5A1B10204500B46A23 /* Quicksand-Regular.otf */; };
 		0745BF771B10204500B46A23 /* Quicksand_Dash.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF5B1B10204500B46A23 /* Quicksand_Dash.otf */; };
-		0745BF781B10204500B46A23 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF5C1B10204500B46A23 /* SIL Open Font License.txt */; };
+		0745BF781B10204500B46A23 /* SIL Open Font License - Quicksand.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0745BF5C1B10204500B46A23 /* SIL Open Font License - Quicksand.txt */; };
+		0745BF7A1B103ABC00B46A23 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745BF791B103ABC00B46A23 /* ColorUtils.swift */; };
 		0759DDB51AEF4745006D046B /* DictionaryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759DDB41AEF4745006D046B /* DictionaryUtils.swift */; };
 		0759DDB71AEF4978006D046B /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759DDB61AEF4978006D046B /* DateUtils.swift */; };
 		075E97CC1AFF0D8D006E02E3 /* CurrencyConverter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 075E97CA1AFF0D8D006E02E3 /* CurrencyConverter.xcdatamodeld */; };
@@ -496,7 +497,7 @@
 		0745BF4F1B10204500B46A23 /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		0745BF501B10204500B46A23 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
 		0745BF511B10204500B46A23 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
-		0745BF521B10204500B46A23 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		0745BF521B10204500B46A23 /* SIL Open Font License - Lato.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License - Lato.txt"; sourceTree = "<group>"; };
 		0745BF541B10204500B46A23 /* daf7250099031398385091fb5416e385.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = daf7250099031398385091fb5416e385.jpg; sourceTree = "<group>"; };
 		0745BF551B10204500B46A23 /* Quicksand-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Bold.otf"; sourceTree = "<group>"; };
 		0745BF561B10204500B46A23 /* Quicksand-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-BoldItalic.otf"; sourceTree = "<group>"; };
@@ -505,7 +506,8 @@
 		0745BF591B10204500B46A23 /* Quicksand-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-LightItalic.otf"; sourceTree = "<group>"; };
 		0745BF5A1B10204500B46A23 /* Quicksand-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Quicksand-Regular.otf"; sourceTree = "<group>"; };
 		0745BF5B1B10204500B46A23 /* Quicksand_Dash.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksand_Dash.otf; sourceTree = "<group>"; };
-		0745BF5C1B10204500B46A23 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
+		0745BF5C1B10204500B46A23 /* SIL Open Font License - Quicksand.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License - Quicksand.txt"; sourceTree = "<group>"; };
+		0745BF791B103ABC00B46A23 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		0759DDB41AEF4745006D046B /* DictionaryUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryUtils.swift; sourceTree = "<group>"; };
 		0759DDB61AEF4978006D046B /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		075E97CB1AFF0D8D006E02E3 /* CurrencyConverter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrencyConverter.xcdatamodel; sourceTree = "<group>"; };
@@ -772,6 +774,7 @@
 			children = (
 				0759DDB41AEF4745006D046B /* DictionaryUtils.swift */,
 				0759DDB61AEF4978006D046B /* DateUtils.swift */,
+				0745BF791B103ABC00B46A23 /* ColorUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -837,7 +840,7 @@
 				0745BF4F1B10204500B46A23 /* Lato-SemiboldItalic.ttf */,
 				0745BF501B10204500B46A23 /* Lato-Thin.ttf */,
 				0745BF511B10204500B46A23 /* Lato-ThinItalic.ttf */,
-				0745BF521B10204500B46A23 /* SIL Open Font License.txt */,
+				0745BF521B10204500B46A23 /* SIL Open Font License - Lato.txt */,
 			);
 			path = lato;
 			sourceTree = "<group>";
@@ -853,7 +856,7 @@
 				0745BF591B10204500B46A23 /* Quicksand-LightItalic.otf */,
 				0745BF5A1B10204500B46A23 /* Quicksand-Regular.otf */,
 				0745BF5B1B10204500B46A23 /* Quicksand_Dash.otf */,
-				0745BF5C1B10204500B46A23 /* SIL Open Font License.txt */,
+				0745BF5C1B10204500B46A23 /* SIL Open Font License - Quicksand.txt */,
 			);
 			path = quicksand;
 			sourceTree = "<group>";
@@ -1140,7 +1143,7 @@
 				072632741AFE982B0088EC80 /* va.png in Resources */,
 				072631BD1AFE982B0088EC80 /* ag.png in Resources */,
 				072631F41AFE982B0088EC80 /* fm.png in Resources */,
-				0745BF781B10204500B46A23 /* SIL Open Font License.txt in Resources */,
+				0745BF781B10204500B46A23 /* SIL Open Font License - Quicksand.txt in Resources */,
 				072632621AFE982B0088EC80 /* td.png in Resources */,
 				0745BF6D1B10204500B46A23 /* Lato-Thin.ttf in Resources */,
 				072632131AFE982B0088EC80 /* kh.png in Resources */,
@@ -1184,7 +1187,7 @@
 				072632341AFE982B0088EC80 /* mv.png in Resources */,
 				072632031AFE982B0088EC80 /* hr.png in Resources */,
 				072632531AFE982B0088EC80 /* sc.png in Resources */,
-				0745BF6F1B10204500B46A23 /* SIL Open Font License.txt in Resources */,
+				0745BF6F1B10204500B46A23 /* SIL Open Font License - Lato.txt in Resources */,
 				0745BF701B10204500B46A23 /* daf7250099031398385091fb5416e385.jpg in Resources */,
 				072632431AFE982B0088EC80 /* pa.png in Resources */,
 				072631D21AFE982B0088EC80 /* bt.png in Resources */,
@@ -1403,6 +1406,7 @@
 				07A0DD751AEC949800005589 /* DataManagerUtils.swift in Sources */,
 				07FF48541AFE1571004175E9 /* AddCurrencyViewController.swift in Sources */,
 				07B476F41AEC4D6B005D424D /* WebServiceClient.swift in Sources */,
+				0745BF7A1B103ABC00B46A23 /* ColorUtils.swift in Sources */,
 				07851AF01AEF3D7F00DAD5CB /* CurrencyRatesUtils.swift in Sources */,
 				07A0DD631AEC833C00005589 /* Constants.swift in Sources */,
 				0759DDB51AEF4745006D046B /* DictionaryUtils.swift in Sources */,
