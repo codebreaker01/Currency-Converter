@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, PullForControlsDataSource, PullForControlsDelegate {
 
     // MARK:- View Properties
     
@@ -38,10 +38,10 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
         
         self.collectionView.registerNib(UINib(nibName: "CurrencyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kCurrencyCollectionViewCellIdentifier)
         
-        WebServiceClient.sharedInstance.buildCurrencyList() {
-            
-            WebServiceClient.sharedInstance.getCurrencyRates() {
-                
+//        WebServiceClient.sharedInstance.buildCurrencyList() {
+//            
+//            WebServiceClient.sharedInstance.getCurrencyRates() {
+        
                 var error : NSError?
                 self.fetchedResultsController.performFetch(&error)
                 if let n = (self.fetchedResultsController.sections?.first as? NSFetchedResultsSectionInfo)?.numberOfObjects {
@@ -51,8 +51,13 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
                     }
                 }
                 self.collectionView.reloadData()
-            }
-        }
+//            }
+//        }
+        
+        var pullForControl: PullForControls = PullForControls(frame: CGRectMake(0, 0, self.view.bounds.size.width, 90))
+        pullForControl.dataSource = self
+        pullForControl.delegate = self
+        self.view.addSubview(pullForControl)
     }
     
     override func didReceiveMemoryWarning() {
@@ -180,6 +185,22 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
                 self.blockOperation.start()
                 }, completion: nil )
         }
+    }
+    
+    func pullForControls(pfc: PullForControls, imageForIndex: Int) -> UIImage? {
+        
+        var imageName: String
+        switch(imageForIndex) {
+            case 0:
+                imageName = "add-icon"
+            case 1:
+                imageName = "refresh-icon"
+            case 2:
+                imageName = "settings-icon"
+            default:
+                imageName = ""
+        }
+        return UIImage(named: imageName)
     }
     
 }
