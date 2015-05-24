@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, PullForControlsDataSource, PullForControlsDelegate {
+class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, PullForControlsDataSource, PullForControlsDelegate {
 
     // MARK:- View Properties
     
@@ -17,8 +17,9 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
     
     // MARK:- Data handling Properties
     
-    var shouldReloadCollectionView = false;
-    var blockOperation: NSBlockOperation!;
+    var shouldReloadCollectionView = false
+    var blockOperation: NSBlockOperation!
+    var pullForControls: PullForControls!
     
     lazy var fetchedResultsController : NSFetchedResultsController = {
         let fetchRC = NSFetchedResultsController(
@@ -54,10 +55,10 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
 //            }
 //        }
         
-        var pullForControl: PullForControls = PullForControls(frame: CGRectMake(0, 0, self.view.bounds.size.width, 90))
-        pullForControl.dataSource = self
-        pullForControl.delegate = self
-        self.view.addSubview(pullForControl)
+        self.pullForControls = PullForControls(frame: CGRectMake(0, 0, self.view.bounds.size.width, 100))
+        self.pullForControls.dataSource = self
+        self.pullForControls.delegate = self
+        self.collectionView.addSubview(self.pullForControls)
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,6 +103,9 @@ class SelectedCurrenciesViewController: BaseViewController, NSFetchedResultsCont
         return 0
     }
     
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        self.pullForControls.scrollViewDidScroll(scrollView)
+    }
     
     // MARK: - NSFetchedResultsControllerDelegate
     
