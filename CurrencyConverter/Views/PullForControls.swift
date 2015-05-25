@@ -19,6 +19,41 @@ enum PanDirection {
 
 enum ControlPosition: Int {
     case ControlLeft = 0, ControlCenter, ControlRight
+    
+    func next(direction: PanDirection) -> ControlPosition {
+        
+        var next: ControlPosition = self
+        switch(self) {
+            
+            case .ControlLeft:
+                if(direction == .Right) {
+                    next = .ControlCenter
+                }
+            case .ControlCenter:
+                if(direction == .Right) {
+                     next = .ControlRight
+                } else if(direction == .Left) {
+                    next = .ControlLeft
+                }
+            case .ControlRight:
+                if(direction == .Left) {
+                    next = .ControlCenter
+                }
+            default: ()
+            
+        }
+        return next
+    }
+    
+    var description : String {
+        
+        switch self {
+            case .ControlLeft:      return "ControlLeft";
+            case .ControlCenter:    return "ControlCenter";
+            case .ControlRight:     return "ControlRight";
+        }
+        
+    }
 }
 
 struct Control {
@@ -28,7 +63,7 @@ struct Control {
     
     func frame() -> CGRect {
         if let superview = imageView.superview {
-            let frame = superview.convertRect(imageView.frame, fromView: imageView.superview)
+            let frame = superview.convertRect(imageView.frame, fromView: superview)
             return frame
         }
         return CGRectZero
@@ -111,6 +146,7 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
             self.controlImages?.append(UIImageView())
         }
         
+        self.controls = Array()
         for var index = 0; index < 3; ++index {
             if let position = ControlPosition(rawValue:index) {
                 self.controls?.append(Control(position: position, imageView: UIImageView()))
@@ -130,7 +166,7 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
         if let imageViews = self.controlImages {
             for (index, value) in enumerate(imageViews) {
                 if let image = self.dataSource?.pullForControls?(self, imageForIndex: index) {
-                    self.addSubview(value)
+//                    self.addSubview(value)
                     value.image = image
                     value.frame = CGRectMake(startX + CGFloat(index) * kControlImageOffsetStart - image.size.width/2, self.bounds.size.height/2 + image.size.height/2, image.size.width, image.size.height)
                     value.alpha = 0.0
@@ -152,15 +188,15 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
             }
         }
         
-        if let centerImage = self.controlImages?[1] {
+        if let centerControl = self.controls?[1] {
             var bendableCircleFrame = CGRectZero
-            var origin = CGPointMake(self.center.x - kBendableViewSize/2, centerImage.center.y - kBendableViewSize/2)
+            var origin = CGPointMake(self.center.x - kBendableViewSize/2, centerControl.center().y - kBendableViewSize/2)
             bendableCircleFrame.size = CGSizeMake(kBendableViewSize, kBendableViewSize)
             bendableCircleFrame.origin = origin
             self.bendableCircle.frame = bendableCircleFrame
             self.bendableCircle.setNeedsDisplay()
             
-            self.selectedControl = Control(position: .ControlCenter, imageView: centerImage)
+            self.selectedControl = centerControl
         }
     }
     
@@ -175,27 +211,27 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
         }
         
         if (scrollView.contentOffset.y < -0.6 * self.bounds.size.height) {
-           self.bendableCircle.animateIn()
+           self.bendableCircle.state = .Active
         } else {
-           self.bendableCircle.animateOut()
+           self.bendableCircle.state = .InActive
         }
     }
     
     func animateSideControl(ratio: CGFloat, index: Int, direction: Int) {
         
-        if let sideImage = self.controlImages?[index] {
+        if let sideControl = self.controls?[index] {
             if (ratio < 1.0) {
-                sideImage.alpha = ratio * 1.0
-                sideImage.transform = CGAffineTransformMakeTranslation(ratio * CGFloat(direction) * kControlImageEndOffset, 0)
+                sideControl.imageView.alpha = ratio * 1.0
+                sideControl.imageView.transform = CGAffineTransformMakeTranslation(ratio * CGFloat(direction) * kControlImageEndOffset, 0)
             }
         }
     }
     
     func animateCenterControl(ratio: CGFloat) {
         
-        if let centerImage = self.controlImages?[1] {
-            centerImage.alpha = ratio * 1.0
-            centerImage.transform = CGAffineTransformMakeRotation(ratio * -CGFloat(M_PI * 2))
+        if let centerControl = self.controls?[1] {
+            centerControl.imageView.alpha = ratio * 1.0
+            centerControl.imageView.transform = CGAffineTransformMakeRotation(ratio * -CGFloat(M_PI * 2))
         }
     }
     
@@ -234,6 +270,9 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
                     frame.origin.x = self.bendableCircle.frame.origin.x + kTranslationRate * translation.x
                 }
                 
+                
+                self.bendableCircle.frame = frame
+                
                 if frame.size.width < kBendableViewSize {
                     
                         frame.size.width = kBendableViewSize
@@ -242,49 +281,21 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
                     
                 } else if frame.size.width > kBendableWidthThreshold {
                     
-                    
-                    switch self.panDirection {
-                        case .Right:
-                                                println("Right")
-//                            if let rightImageView = self.controlImages?[2] {
-//                                var rightImageViewFrame = self.convertRect(rightImageView.frame, fromView: self)
-//                                var center = CGPointMake(rightImageViewFrame.origin.x - rightImageViewFrame.width/2, rightImageViewFrame.origin.y - rightImageViewFrame.height/2)
-                                if let control = self.controls?[ControlPosition.ControlRight.rawValue] {
-                                    self.selectedControl = control
-                                }
-                                
-                                self.bendableCircle.state = .Translating
-                                UIView.animateWithDuration(0.2, animations: {
-                                    self.bendableCircle.frame = self.selectedControl.transformToBendableViewFrame()
-                                    }, completion: {
-                                        (value: Bool) in
-                                        self.bendableCircle.state = .Active
-                                })
-                                
-                            }
-                        case .Left:
-//                            if let leftImageView = self.controlImages?[0] {
-//                                var leftImageViewFrame = self.convertRect(leftImageView.frame, fromView: self)
-//                                var center = CGPointMake(leftImageViewFrame.origin.x - leftImageViewFrame.width/2, leftImageViewFrame.origin.y - leftImageViewFrame.height/2)
-                                if let control = self.controls?[ControlPosition.ControlRight.rawValue] {
-                                    self.selectedControl = control
-                                }
-                                
-                                self.bendableCircle.state = .Translating
-                                UIView.animateWithDuration(0.2, animations: {
-                                    self.bendableCircle.frame = frame
-                                    }, completion: {
-                                        (value: Bool) in
-                                        self.bendableCircle.state = .Active
-                                })
-                            }
-                        default: ()
+                    var nextPosition = self.selectedControl.position.next(self.panDirection)
+                    if let control = self.controls?[nextPosition.rawValue] {
+                        self.selectedControl = control
                     }
                     
+                    self.bendableCircle.state = .Translating
+                    UIView.animateWithDuration(0.2, animations: {
+                        self.bendableCircle.frame = self.selectedControl.transformToBendableViewFrame()
+                        }, completion: {
+                            (value: Bool) in
+                            self.bendableCircle.state = .Active
+                    })
                 }
-                
-                self.bendableCircle.frame = frame
             }
+            
         } else if (recognizer.state == .Ended ||
                    recognizer.state == .Cancelled ||
                    recognizer.state == .Failed) {
