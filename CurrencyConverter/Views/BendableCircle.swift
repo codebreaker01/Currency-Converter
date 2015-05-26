@@ -51,15 +51,6 @@ class BendableCircle: UIView {
         UIColor.grayColor().setFill()
         ovalPath.fill()
     }
-    
-    func distortWithTranslation(x: CGFloat) {
-        
-        var frame = self.frame
-        frame.size.width = self.frame.size.width - x
-        frame.origin.x = self.frame.origin.x + x
-        self.frame = frame
-        
-    }
 
     func animateIn() {
         

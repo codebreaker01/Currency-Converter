@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 let kControlImageEndOffset: CGFloat = 100
-let kControlImageOffsetStart: CGFloat = 20
+let kControlImageOffsetStart: CGFloat = 30
 let kTranslationRate: CGFloat = 0.25
 
 enum PanDirection {
@@ -141,11 +141,6 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
         frame.origin.y = -frame.size.height
         self.frame = frame
         
-        self.controlImages = Array()
-        for var index = 0; index < 3; ++index {
-            self.controlImages?.append(UIImageView())
-        }
-        
         self.controls = Array()
         for var index = 0; index < 3; ++index {
             if let position = ControlPosition(rawValue:index) {
@@ -162,17 +157,6 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
         self.bendableCircle.alpha = 0.0
         
         let startX: CGFloat = self.center.x - kControlImageOffsetStart
-        
-        if let imageViews = self.controlImages {
-            for (index, value) in enumerate(imageViews) {
-                if let image = self.dataSource?.pullForControls?(self, imageForIndex: index) {
-//                    self.addSubview(value)
-                    value.image = image
-                    value.frame = CGRectMake(startX + CGFloat(index) * kControlImageOffsetStart - image.size.width/2, self.bounds.size.height/2 + image.size.height/2, image.size.width, image.size.height)
-                    value.alpha = 0.0
-                }
-            }
-        }
         
         for var index = 0; index < self.controls?.count; index++ {
             if let position = ControlPosition(rawValue:index) {
@@ -207,6 +191,7 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
             animateCenterControl(ratio)
             animateSideControl(ratio, index: 0, direction: -1)
             animateSideControl(ratio, index: 2, direction: 1)
+            animateBendingLayer(ratio)
             self.panGesture?.enabled = true
         }
         
@@ -214,6 +199,16 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
            self.bendableCircle.state = .Active
         } else {
            self.bendableCircle.state = .InActive
+        }
+    }
+    
+    func animateBendingLayer(ratio: CGFloat) {
+        
+        if (ratio < 1.0) {
+            if(self.selectedControl.position == .ControlRight || self.selectedControl.position == .ControlLeft) {
+                self.bendableCircle.alpha = ratio * 1.0
+                 self.bendableCircle.center = self.selectedControl.center()
+            }
         }
     }
     
@@ -300,13 +295,9 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
                    recognizer.state == .Cancelled ||
                    recognizer.state == .Failed) {
                     
+                    self.panDirection = .None
+                    
                     UIView .animateWithDuration(0.2, animations: {
-                            var frame = self.bendableCircle.frame
-                            frame.size.width = kBendableViewSize
-                            frame.size.height = kBendableViewSize
-                            frame.origin.x = self.center.x - kBendableViewSize/2
-                            self.bendableCircle.frame = frame
-                            self.panDirection = .None
                         }, completion: {
                             (value: Bool) in
                     })

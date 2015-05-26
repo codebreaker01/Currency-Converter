@@ -240,7 +240,6 @@
 		0745C59D1B10E58500B46A23 /* zm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0745C4D91B10E58500B46A23 /* zm@2x.png */; };
 		0745C59E1B10E58500B46A23 /* zw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0745C4DA1B10E58500B46A23 /* zw@2x.png */; };
 		0745C5A31B11A4E000B46A23 /* PullForControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C5A21B11A4E000B46A23 /* PullForControls.swift */; };
-		0745C5A91B123B3300B46A23 /* BendableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0745C5A81B123B3300B46A23 /* BendableView.swift */; };
 		0759DDB51AEF4745006D046B /* DictionaryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759DDB41AEF4745006D046B /* DictionaryUtils.swift */; };
 		0759DDB71AEF4978006D046B /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0759DDB61AEF4978006D046B /* DateUtils.swift */; };
 		075E97CC1AFF0D8D006E02E3 /* CurrencyConverter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 075E97CA1AFF0D8D006E02E3 /* CurrencyConverter.xcdatamodeld */; };
@@ -510,7 +509,6 @@
 		0745C4D91B10E58500B46A23 /* zm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zm@2x.png"; sourceTree = "<group>"; };
 		0745C4DA1B10E58500B46A23 /* zw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zw@2x.png"; sourceTree = "<group>"; };
 		0745C5A21B11A4E000B46A23 /* PullForControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PullForControls.swift; path = CurrencyConverter/Views/PullForControls.swift; sourceTree = SOURCE_ROOT; };
-		0745C5A81B123B3300B46A23 /* BendableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BendableView.swift; path = CurrencyConverter/Views/BendableView.swift; sourceTree = SOURCE_ROOT; };
 		0759DDB41AEF4745006D046B /* DictionaryUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryUtils.swift; sourceTree = "<group>"; };
 		0759DDB61AEF4978006D046B /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		075E97CB1AFF0D8D006E02E3 /* CurrencyConverter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrencyConverter.xcdatamodel; sourceTree = "<group>"; };
@@ -959,7 +957,6 @@
 			isa = PBXGroup;
 			children = (
 				078BD4EB1B12B61200436653 /* BendableCircle.swift */,
-				0745C5A81B123B3300B46A23 /* BendableView.swift */,
 				0745C5A21B11A4E000B46A23 /* PullForControls.swift */,
 			);
 			name = Views;
@@ -1407,7 +1404,6 @@
 				072630F31AFE94390088EC80 /* CurrencyCollectionViewCell.swift in Sources */,
 				07B476F91AEC4DAD005D424D /* BaseViewController.swift in Sources */,
 				07EB126C1AEEA20C00FB3B96 /* CurrencyUtils.swift in Sources */,
-				0745C5A91B123B3300B46A23 /* BendableView.swift in Sources */,
 				07FF48501AFE1018004175E9 /* HistoricalRates.swift in Sources */,
 				07FF484A1AFE0E9A004175E9 /* HistoricalDatesUtils.swift in Sources */,
 				07FF485A1AFE17E7004175E9 /* Currency.swift in Sources */,
