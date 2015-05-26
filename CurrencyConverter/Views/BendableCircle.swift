@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 let kBendableViewSize: CGFloat = 60.0
-let kBendableWidthThreshold: CGFloat = 80.0
+let kBendableWidthThreshold: CGFloat = 90.0
 
 enum BendableCircleState {
     case Active, InActive, Translating
@@ -18,22 +18,7 @@ enum BendableCircleState {
 
 class BendableCircle: UIView {
     
-    var state: BendableCircleState = .InActive {
-        willSet {
-            
-            if(newValue != state) {
-                
-                switch(newValue) {
-                case .Active:
-                    animateIn()
-                case .InActive:
-                    animateOut()
-                default: ()
-                    
-                }
-            }
-        }
-    }
+    var state: BendableCircleState = .InActive
     
     override func drawRect(rect: CGRect) {
         drawBendableCircle(frame: self.bounds)

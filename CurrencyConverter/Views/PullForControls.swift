@@ -11,10 +11,20 @@ import UIKit
 
 let kControlImageEndOffset: CGFloat = 100
 let kControlImageOffsetStart: CGFloat = 30
-let kTranslationRate: CGFloat = 0.25
+let kTranslationRate: CGFloat = 0.35
 
 enum PanDirection {
-    case Right, Left, None
+    case Right, Left, ReCalculcate, None
+    
+    var description : String {
+        
+        switch self {
+            case .Right:            return "Right"
+            case .Left:             return "Left"
+            case .ReCalculcate :    return "ReCalculcate"
+            case .None:             return "None"
+        }
+    }
 }
 
 enum ControlPosition: Int {
@@ -194,22 +204,16 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
             animateBendingLayer(ratio)
             self.panGesture?.enabled = true
         }
-        
-        if (scrollView.contentOffset.y < -0.6 * self.bounds.size.height) {
-           self.bendableCircle.state = .Active
-        } else {
-           self.bendableCircle.state = .InActive
-        }
     }
     
     func animateBendingLayer(ratio: CGFloat) {
         
         if (ratio < 1.0) {
             if(self.selectedControl.position == .ControlRight || self.selectedControl.position == .ControlLeft) {
-                self.bendableCircle.alpha = ratio * 1.0
-                 self.bendableCircle.center = self.selectedControl.center()
+                self.bendableCircle.center = self.selectedControl.center()
             }
         }
+        self.bendableCircle.alpha = ratio * 1.0
     }
     
     func animateSideControl(ratio: CGFloat, index: Int, direction: Int) {
@@ -225,8 +229,8 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
     func animateCenterControl(ratio: CGFloat) {
         
         if let centerControl = self.controls?[1] {
-            centerControl.imageView.alpha = ratio * 1.0
-            centerControl.imageView.transform = CGAffineTransformMakeRotation(ratio * -CGFloat(M_PI * 2))
+                centerControl.imageView.alpha = ratio * 1.0
+                centerControl.imageView.transform = CGAffineTransformMakeRotation(ratio * -CGFloat(M_PI * 2))
         }
     }
     
@@ -254,19 +258,30 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
                         self.panDirection = .Left
                     }
                     
-                } else if (self.panDirection == .Right) {
+                } else if (self.panDirection == .ReCalculcate){
+                    
+                    if (velocity.x > 0) {
+                        self.panDirection = .Right
+                    } else {
+                        self.panDirection = .Left
+                    }
+                    
+                } else if (self.panDirection == .Right && self.selectedControl.position != .ControlRight) {
                     
                     frame.size.width = self.bendableCircle.frame.size.width + kTranslationRate * translation.x
                     frame.origin.x = self.bendableCircle.frame.origin.x
                     
-                } else if (self.panDirection == .Left) {
+                } else if (self.panDirection == .Left && self.selectedControl.position != .ControlLeft) {
                     
                     frame.size.width = self.bendableCircle.frame.size.width - kTranslationRate * translation.x
                     frame.origin.x = self.bendableCircle.frame.origin.x + kTranslationRate * translation.x
+                } else {
+                    
+                    self.panDirection = .ReCalculcate
                 }
                 
-                
                 self.bendableCircle.frame = frame
+                self.bendableCircle.setNeedsDisplay()
                 
                 if frame.size.width < kBendableViewSize {
                     
@@ -281,12 +296,13 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
                         self.selectedControl = control
                     }
                     
+                    var previousState = self.bendableCircle.state
                     self.bendableCircle.state = .Translating
                     UIView.animateWithDuration(0.2, animations: {
                         self.bendableCircle.frame = self.selectedControl.transformToBendableViewFrame()
                         }, completion: {
                             (value: Bool) in
-                            self.bendableCircle.state = .Active
+                            self.bendableCircle.state = previousState
                     })
                 }
             }
@@ -295,12 +311,7 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
                    recognizer.state == .Cancelled ||
                    recognizer.state == .Failed) {
                     
-                    self.panDirection = .None
-                    
-                    UIView .animateWithDuration(0.2, animations: {
-                        }, completion: {
-                            (value: Bool) in
-                    })
+               
         }
     }
     
