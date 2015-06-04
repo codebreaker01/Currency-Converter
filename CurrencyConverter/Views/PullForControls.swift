@@ -204,24 +204,65 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
             animateBendingLayer(ratio)
             self.panGesture?.enabled = true
         }
+        
+        if(scrollView.contentOffset.y == 0) {
+            
+            if let centerControl = self.controls?[1] {
+                var bendableCircleFrame = CGRectZero
+                var origin = CGPointMake(centerControl.center().x - kBendableViewSize/2, centerControl.center().y - kBendableViewSize/2)
+                bendableCircleFrame.size = CGSizeMake(kBendableViewSize, kBendableViewSize)
+                bendableCircleFrame.origin = origin
+                self.bendableCircle.frame = bendableCircleFrame
+                self.bendableCircle.setNeedsDisplay()
+                self.selectedControl.position = .ControlCenter
+            }
+        }
     }
     
     func animateBendingLayer(ratio: CGFloat) {
         
         if (ratio < 1.0) {
-            if(self.selectedControl.position == .ControlRight || self.selectedControl.position == .ControlLeft) {
-                self.bendableCircle.center = self.selectedControl.center()
+            if(self.bendableCircle.state == .Active) {
+                UIView.animateWithDuration(0.2, animations: {
+                    self.bendableCircle.alpha = 0.0
+                    self.bendableCircle.state = .InActive
+                    }, completion:{
+                        (value: Bool) in
+                        if(self.selectedControl.position == .ControlRight || self.selectedControl.position == .ControlLeft) {
+                            self.bendableCircle.center = self.selectedControl.center()
+                        }
+                })
+            }
+        } else {
+            if(self.bendableCircle.state == .InActive) {
+                UIView.animateWithDuration(0.25) {
+                    self.bendableCircle.alpha = 1.0
+                    self.bendableCircle.state = .Active
+                }
             }
         }
-        self.bendableCircle.alpha = ratio * 1.0
     }
     
     func animateSideControl(ratio: CGFloat, index: Int, direction: Int) {
         
         if let sideControl = self.controls?[index] {
-            if (ratio < 1.0) {
-                sideControl.imageView.alpha = ratio * 1.0
-                sideControl.imageView.transform = CGAffineTransformMakeTranslation(ratio * CGFloat(direction) * kControlImageEndOffset, 0)
+            if (ratio > 1.0) {
+                
+                UIView.animateWithDuration(0.75) {
+                    sideControl.imageView.alpha = 1.0
+                }
+                UIView.animateWithDuration(0.25) {
+                    sideControl.imageView.transform = CGAffineTransformMakeTranslation(CGFloat(direction) * kControlImageEndOffset, 0)
+                }
+                
+            } else {
+                
+                UIView.animateWithDuration(0.25) {
+                    sideControl.imageView.alpha = 0.0
+                }
+                UIView.animateWithDuration(0.75) {
+                       sideControl.imageView.transform = CGAffineTransformMakeTranslation(-1.0 * CGFloat(direction) * kControlImageOffsetStart, 0)
+                }
             }
         }
     }
@@ -236,7 +277,7 @@ public class PullForControls: UIView, UIGestureRecognizerDelegate {
     
     func pannedInSuperView(recognizer: UIPanGestureRecognizer) {
     
-        if recognizer.state == .Changed && self.bendableCircle.state != .Translating {
+        if recognizer.state == .Changed && self.bendableCircle.state == .Active {
             
             if let superview = self.superview {
                 
